@@ -41,5 +41,14 @@ int main()
 
     Street streets[] = {tmp_street, tmp_street, tmp_street};
 
+    /* If else statement */
+    if (bool_var) {
+        cout << "True!";
+    } else {
+        cout << "False!";
+    }
+
+    cout << endl;
+
     return 0;
 }
