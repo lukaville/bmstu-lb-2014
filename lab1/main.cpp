@@ -7,6 +7,8 @@
 
 #define STUDENT_NUMBER 23
 
+#define avr(a,b,c) (a+b+c)/3
+
 using namespace std;
 
 typedef int* int_ptr;
@@ -73,6 +75,18 @@ int main()
 
     /* typedef */
     int_ptr ptr = &int_var;
+
+    /* switch */
+    switch(3) {
+        case 1: cout << "one";
+        case 2: cout << "two";
+        case 3: cout << "three";
+    }
+
+    cout << endl;
+
+    /* macros */
+    cout << avr(1,2,3);
 
     return 0;
 }
