@@ -33,13 +33,13 @@ int main()
     int a = 5;
     int_pointer = &a;
     int &b = a;
-    cout << a << " " << b << " " << int_pointer;
+    cout << a << " " << b << " " << int_pointer << endl;
 
     /* Structures */
     Street tmp_street = {"Ленинский проспект", "Москва", "Измайлово", "Россия"};
-    printf("Steet: %s, city: %s, district: %s, country: %s\n", tmp_street.name, tmp_street.city, tmp_street.district, tmp_street.country);
+    cout << "Steet: " << tmp_street.name  << ", city: " << tmp_street.city << ", district:" << tmp_street.district << "country: " << tmp_street.country << endl;
 
-    Steet[] = {tmp_street, tmp_street, tmp_street};
+    Street streets[] = {tmp_street, tmp_street, tmp_street};
 
     return 0;
 }
