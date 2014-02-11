@@ -1,4 +1,6 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-#endif // MAIN_H
+struct Street {
+    std::string name;
+    std::string city;
+    std::string district;
+    std::string country;
+};

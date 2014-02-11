@@ -1,4 +1,8 @@
 #include <iostream>
+#include <string>
+
+#include "main.h"
+
 #define STUDENT_NUMBER 23
 
 using namespace std;
@@ -30,6 +34,12 @@ int main()
     int_pointer = &a;
     int &b = a;
     cout << a << " " << b << " " << int_pointer;
+
+    /* Structures */
+    Street tmp_street = {"Ленинский проспект", "Москва", "Измайлово", "Россия"};
+    printf("Steet: %s, city: %s, district: %s, country: %s\n", tmp_street.name, tmp_street.city, tmp_street.district, tmp_street.country);
+
+    Steet[] = {tmp_street, tmp_street, tmp_street};
 
     return 0;
 }
