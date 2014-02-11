@@ -21,8 +21,15 @@ int main()
     double double_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 0.1};
     bool bool_arr[25] = {int_arr[STUDENT_NUMBER - 1] = false};
 
-    /* Print array elements */
-    cout << int_arr[STUDENT_NUMBER - 1];
+    /* Print array element */
+    cout << int_arr[STUDENT_NUMBER - 1] << endl;
+
+    /* Pointers */
+    int* int_pointer = nullptr;
+    int a = 5;
+    int_pointer = &a;
+    int &b = a;
+    cout << a << " " << b << " " << int_pointer;
 
     return 0;
 }
