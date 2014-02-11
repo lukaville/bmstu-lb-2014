@@ -9,6 +9,8 @@
 
 using namespace std;
 
+typedef int* int_ptr;
+
 int main()
 {
     /* Variable initialization */
@@ -68,6 +70,9 @@ int main()
     getline(read_text_file, line);
     cout << line << endl;
     read_text_file.close();
+
+    /* typedef */
+    int_ptr ptr = &int_var;
 
     return 0;
 }
