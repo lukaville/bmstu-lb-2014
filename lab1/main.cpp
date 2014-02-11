@@ -2,6 +2,7 @@
 #include <string>
 
 #include "main.h"
+#include "additional.cpp"
 
 #define STUDENT_NUMBER 23
 
@@ -49,6 +50,10 @@ int main()
     }
 
     cout << endl;
+
+    /* Functions */
+    vector<int> arr = {2, 1, 3};
+    cout << get_min(arr) << endl;
 
     return 0;
 }

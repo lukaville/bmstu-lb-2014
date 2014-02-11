@@ -5,7 +5,8 @@ CONFIG -= qt
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    additional.cpp
 
 HEADERS += \
     main.h
