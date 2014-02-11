@@ -1,4 +1,5 @@
 #include <iostream>
+#define STUDENT_NUMBER 23
 
 using namespace std;
 
@@ -13,12 +14,15 @@ int main()
     bool bool_var = false;
 
     /* Array initialization */
-    int int_arr[25] = {int_arr[22] = 1};
-    long long_arr[25] = {int_arr[22] = 1};
-    char char_arr[25] = {int_arr[22] = 'a'};
-    float float_arr[25] = {int_arr[22] = 0.1};
-    double double_arr[25] = {int_arr[22] = 0.1};
-    bool bool_arr[25] = {int_arr[22] = false};
+    int int_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 1};
+    long long_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 1};
+    char char_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 'a'};
+    float float_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 0.1};
+    double double_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 0.1};
+    bool bool_arr[25] = {int_arr[STUDENT_NUMBER - 1] = false};
+
+    /* Print array elements */
+    cout << int_arr[STUDENT_NUMBER - 1];
 
     return 0;
 }
