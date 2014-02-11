@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 
 #include "main.h"
@@ -54,6 +55,19 @@ int main()
     /* Functions */
     vector<int> arr = {2, 1, 3};
     cout << get_min(arr) << endl;
+    
+    /* Files */
+    ofstream text_file;
+    text_file.open("chameyev.txt");
+    text_file << "Chameyev Nickolay Leonidovich, group IU5-24, variant 23";
+    text_file.close();
+
+    string line;
+    ifstream read_text_file;
+    read_text_file.open("chameyev.txt");
+    getline(read_text_file, line);
+    cout << line << endl;
+    read_text_file.close();
 
     return 0;
 }
