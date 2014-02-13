@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include "circle.h"
 
 using namespace std;
 
@@ -63,6 +64,9 @@ int main()
 
     cout.width(80); cout << left << chars_var << left << endl;
     cout.width(80); cout << right << chars_var << right << endl << endl;
+
+    Circle c1(1,2,3);
+    cout << c1;
 
     return 0;
 }
