@@ -21,6 +21,21 @@ int main()
     cin >> chars_var;
     cout << "Введено chars_var = " << chars_var << endl << endl;
 
+    /* Manipulators */
+    cout.width(20);
+    cout << chars_var << " - width(20)" << endl;
+
+    cout.width(20);
+    cout.fill('*');
+    cout << chars_var << " - fill('*')" << endl;
+
+    cout.width(30);
+    cout.fill('!');
+    cout << chars_var << " - width(30), fill('!')" << endl;
+
+    cout << "До precision double_var = " << double_var << endl;
+    cout.precision(2);
+    cout << "После  cout.precision(2) double_var = " << double_var << endl;
 
     return 0;
 }
