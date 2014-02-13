@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -46,6 +47,22 @@ int main()
     cout << "Повторно после вызова cout.setf(ios_base::hex) int_val = " << int_var << endl;
     cout.unsetf(ios_base::hex);
     cout << "Повторно после вызова cout.unsetf(ios_base::hex) int_val = " << int_var << endl << endl;
+
+    cout << "setbase(16) для 16 = " << setbase(16) << 16 << endl;
+    cout << "setbase(10) для 16 = " << setbase(10) << 16 << endl;
+    cout << "setbase(8) для 16 = " << setbase(8) << 16 << endl << endl;
+
+    cout << "f = " << 5.2111 << " = " << scientific << 5.2111 << fixed << endl << endl;
+
+    cout << "Для 12 hex - " << hex << showbase << 12 << endl;
+    cout << "Для 12 oct - " << oct << showbase << 12 << endl;
+    cout << "Для 12 dec - " << dec << showbase << 12 << endl << endl;
+
+    cout << "До setprecision(8) - " << 5.21110010 << endl;
+    cout << "После setprecision(8) - " << setprecision(8) << 5.21110010 << endl << endl;
+
+    cout.width(80); cout << left << chars_var << left << endl;
+    cout.width(80); cout << right << chars_var << right << endl << endl;
 
     return 0;
 }
