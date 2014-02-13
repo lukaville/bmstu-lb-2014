@@ -21,7 +21,7 @@ int main()
     cin >> chars_var;
     cout << "Введено chars_var = " << chars_var << endl << endl;
 
-    /* Manipulators */
+    /* Stream formatting */
     cout.width(20);
     cout << chars_var << " - width(20)" << endl;
 
@@ -36,6 +36,16 @@ int main()
     cout << "До precision double_var = " << double_var << endl;
     cout.precision(2);
     cout << "После  cout.precision(2) double_var = " << double_var << endl;
+
+    /* Manipulators */
+    cout << "hex int_val = " << hex << int_var << endl;
+    cout << "dec int_val = " << dec << int_var << endl;
+    cout << "oct int_val = " << oct << int_var << endl;
+
+    cout.setf(ios_base::hex);
+    cout << "Повторно после вызова cout.setf(ios_base::hex) int_val = " << int_var << endl;
+    cout.unsetf(ios_base::hex);
+    cout << "Повторно после вызова cout.unsetf(ios_base::hex) int_val = " << int_var << endl << endl;
 
     return 0;
 }
