@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
+int integer_additional_var = 15;
+
+char* get_info() {
+    return "Чамеев Николай, группа ИУ5-24, Вариант по списку №23.";
+}
+
+double get_random_double() {
+    return 3.14;
+}

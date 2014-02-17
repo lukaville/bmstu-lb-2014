@@ -4,10 +4,15 @@
 
 using namespace std;
 
+char* get_info(void);
+
+extern int integer_additional_var;
+
+double get_random_double();
+
 int main()
 {
     /* Input and output standart types */
-
     int int_var;
     cout << "Введите int_var: ";
     cin >> int_var;
@@ -64,6 +69,12 @@ int main()
 
     cout.width(80); cout << left << chars_var << left << endl;
     cout.width(80); cout << right << chars_var << right << endl << endl;
+
+    cout << get_info() << endl << endl;
+
+    cout << "integer_additional_var = " << integer_additional_var << endl << endl;
+
+    cout << "get_random_double() = " << get_random_double() << endl << endl;
 
     Circle c1(1,2,3);
     cout << c1;
