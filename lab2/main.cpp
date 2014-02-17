@@ -81,7 +81,12 @@ int main()
     cout << "Integer pointer value: " << *integer_pointer << endl << endl;
 
     Circle c1(1,2,3);
-    cout << c1;
+
+    c1.input();
+    c1.print(); cout << endl;
+
+    cin >> c1;
+    cout << c1 << endl;
 
     return 0;
 }

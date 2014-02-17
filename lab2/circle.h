@@ -6,6 +6,7 @@
 class Circle
 {
 friend std::ostream &operator<<(std::ostream &output, Circle &circle);
+friend std::istream &operator>>(std::istream &input, Circle &circle);
 private:
     double x, y, radius;
 public:
@@ -17,6 +18,7 @@ public:
     double getX() const;
     void setX(double value);
     void print();
+    void input();
 };
 
 
