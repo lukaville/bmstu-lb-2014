@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip>
+#include <vector>
 #include "circle.h"
+#include "cpoint.h"
 
 using namespace std;
 
@@ -98,6 +100,21 @@ int main()
 
     /* Own manipulator */
     cout << ddd << 111 << endl << endl;
+
+    /* Input and output for STL classes */
+    vector<int> a; int temp;
+    for(int i = 0; i < 10; ++i) {
+        a.push_back(temp);
+    }
+
+    string b;
+    cin >> b;
+
+    CPoint p1;
+    cin >> temp;
+    p1.setX(temp); p1.setY(temp);
+
+    cout << p1.getX() << p1.getY() << endl << endl;
 
     return 0;
 }
