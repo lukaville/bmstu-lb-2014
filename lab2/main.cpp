@@ -10,6 +10,11 @@ extern int integer_additional_var;
 
 double get_random_double();
 
+ostream &ddd(ostream &stream) {
+    stream << hex << showbase;
+    return stream;
+}
+
 int main()
 {
     /* Input and output standart types */
@@ -70,23 +75,29 @@ int main()
     cout.width(80); cout << left << chars_var << left << endl;
     cout.width(80); cout << right << chars_var << right << endl << endl;
 
+    /* Functions */
     cout << get_info() << endl << endl;
 
     cout << "integer_additional_var = " << integer_additional_var << endl << endl;
 
     cout << "get_random_double() = " << get_random_double() << endl << endl;
 
+    /* Pointer */
     int* integer_pointer = &int_var;
 
     cout << "Integer pointer value: " << *integer_pointer << endl << endl;
 
+    /* Class */
     Circle c1(1,2,3);
 
     c1.input();
     c1.print(); cout << endl;
 
     cin >> c1;
-    cout << c1 << endl;
+    cout << c1 << endl << endl;
+
+    /* Own manipulator */
+    cout << ddd << 111 << endl << endl;
 
     return 0;
 }
