@@ -76,6 +76,10 @@ int main()
 
     cout << "get_random_double() = " << get_random_double() << endl << endl;
 
+    int* integer_pointer = &int_var;
+
+    cout << "Integer pointer value: " << *integer_pointer << endl << endl;
+
     Circle c1(1,2,3);
     cout << c1;
 
