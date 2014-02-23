@@ -1,8 +1,9 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include "circle.h"
+#include "point.h"
 #include "cpoint.h"
+#include "stdio.h"
 
 using namespace std;
 
@@ -12,8 +13,8 @@ extern int integer_additional_var;
 
 double get_random_double();
 
-ostream &ddd(ostream &stream) {
-    stream << hex << showbase;
+ostream &bbb(ostream &stream) {
+    stream << endl << endl << endl;
     return stream;
 }
 
@@ -90,7 +91,7 @@ int main()
     cout << "Integer pointer value: " << *integer_pointer << endl << endl;
 
     /* Class */
-    Circle c1(1,2,3);
+    Point c1(1,2);
 
     c1.input();
     c1.print(); cout << endl;
@@ -99,7 +100,7 @@ int main()
     cout << c1 << endl << endl;
 
     /* Own manipulator */
-    cout << ddd << 111 << endl << endl;
+    cout << bbb << 111 << endl << endl;
 
     /* Input and output for STL classes */
     vector<int> a; int temp;
@@ -115,6 +116,18 @@ int main()
     p1.setX(temp); p1.setY(temp);
 
     cout << p1.getX() << p1.getY() << endl << endl;
+
+    /* Stream special methods */
+    cin.get();
+
+    char inp[8];
+    cin.getline(inp, 8);
+    cin.read(inp, 8);
+    cout.write(inp, 8);
+    cout.put('X');
+
+    puts(inp);
+
 
     return 0;
 }

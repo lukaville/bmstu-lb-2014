@@ -8,6 +8,6 @@ char* get_info() {
     return "Чамеев Николай, группа ИУ5-24, Вариант по списку №23.";
 }
 
-double get_random_double() {
+float get_random_double() {
     return 3.14;
 }
