@@ -4,6 +4,7 @@
 #include "iostream"
 #include "color.h"
 #include "point.h"
+#include <string>
 
 class Triangle
 {
@@ -44,6 +45,10 @@ public:
         count++;
     }
 
+    Triangle(std::string name) {
+        this->name = name;
+    }
+
     ~Triangle()
     {
         count--;
@@ -67,6 +72,7 @@ public:
 private:
     Point p1, p2, p3;
     Color color;
+    std::string name;
 };
 
 #endif // TRIANGLE_H

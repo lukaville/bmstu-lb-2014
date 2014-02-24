@@ -92,7 +92,9 @@ int main()
     // protected testing
     // eqTr1.test; 'int Triangle::test' is protected
 
-
+    // string type demonstration
+    Triangle sTr1("test");
+    EquilateralTriangle sTr2("test");
 
     return 0;
 }
