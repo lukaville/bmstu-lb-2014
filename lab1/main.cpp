@@ -5,7 +5,7 @@
 #include "main.h"
 #include "additional.cpp"
 
-#define STUDENT_NUMBER 23
+#define STUDENT_ID 23
 
 #define avr(a,b,c) ((a)+(b)+(c))/3
 
@@ -24,15 +24,15 @@ int main()
     bool bool_var = false;
 
     /* Array initialization */
-    int int_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 1};
-    long long_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 1};
-    char char_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 'a'};
-    float float_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 0.1};
-    double double_arr[25] = {int_arr[STUDENT_NUMBER - 1] = 0.1};
-    bool bool_arr[25] = {int_arr[STUDENT_NUMBER - 1] = false};
+    int int_arr[25] = {int_arr[STUDENT_ID - 1] = 1};
+    long long_arr[25] = {int_arr[STUDENT_ID - 1] = 1};
+    char char_arr[25] = {int_arr[STUDENT_ID - 1] = 'a'};
+    float float_arr[25] = {int_arr[STUDENT_ID - 1] = 0.1};
+    double double_arr[25] = {int_arr[STUDENT_ID - 1] = 0.1};
+    bool bool_arr[25] = {int_arr[STUDENT_ID - 1] = false};
 
     /* Print array element */
-    cout << int_arr[STUDENT_NUMBER - 1] << endl;
+    cout << int_arr[STUDENT_ID - 1] << endl;
 
     /* Pointers */
     int* int_pointer = nullptr;

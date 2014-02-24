@@ -13,7 +13,6 @@ friend std::istream &operator>>(std::istream &input, Triangle &triangle);
 public:
     Triangle()
     {
-        std::cout << "tdsfojdsmkd";
         p1 = Point(0, 0);
         p2 = Point(0, 0);
         p3 = Point(0, 0);
@@ -36,10 +35,10 @@ public:
         this->color = color;
     }
 
-    //~Triangle()
-    //{
+    ~Triangle()
+    {
         //nothing to do
-    //}
+    }
 
     Point getP1() const;
     void setP1(const Point &value);
