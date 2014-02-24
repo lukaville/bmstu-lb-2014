@@ -10,6 +10,9 @@ class Triangle
 friend std::ostream &operator<<(std::ostream &output, Triangle &triangle);
 friend std::istream &operator>>(std::istream &input, Triangle &triangle);
 
+protected:
+    int test;
+
 public:
     Triangle()
     {

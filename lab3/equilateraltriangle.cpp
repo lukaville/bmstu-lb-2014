@@ -15,5 +15,8 @@ std::ostream &operator<<(std::ostream &output, EquilateralTriangle &triangle)
 
 void EquilateralTriangle::expandRadius(double delta)
 {
+    // protected property testing
+    test = 1;
+
     this->radius += delta;
 }

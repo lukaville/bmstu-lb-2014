@@ -89,6 +89,11 @@ int main()
 
     cout << arr2[STUDENT_ID] << endl;
 
+    // protected testing
+    // eqTr1.test; 'int Triangle::test' is protected
+
+
+
     return 0;
 }
 
