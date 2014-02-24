@@ -2,6 +2,7 @@
 #include "color.h"
 #include "point.h"
 #include "triangle.h"
+#include "equilateraltriangle.h"
 
 #define STUDENT_ID 23
 
@@ -54,7 +55,39 @@ int main()
     // t1.p1;
     // 'Point Triangle::p1' is private
 
-    cout << "Статическая переменная Triangle::count = "  << Triangle::count << endl;
+    cout << "Статическая переменная Triangle::count = "  << Triangle::count << endl << endl;
+
+    // Inheritage
+    EquilateralTriangle eqTr1(Point(0, 0), Point(1, 2), Point(3, 4), Color(255, 124, 23), 2, 3);
+    cout << eqTr1;
+
+    EquilateralTriangle eqTr2();
+    cout << eqTr2;
+
+    eqTr1.getColor();
+    eqTr1.getP1();
+    eqTr1.getP2();
+    eqTr1.getP3();
+    eqTr1.setColor(Color(1,2,3));
+    eqTr1.setP1(Point(1,3));
+    eqTr1.setP2(Point(1,2));
+    eqTr1.setP3(Point(3,2));
+    eqTr1.expandRadius(25);
+
+    cout << eqTr1 << endl;
+
+    EquilateralTriangle arr2[30];
+
+    arr2[STUDENT_ID].getColor();
+    arr2[STUDENT_ID].getP1();
+    arr2[STUDENT_ID].getP2();
+    arr2[STUDENT_ID].getP3();
+    arr2[STUDENT_ID].setColor(Color(1,2,3));
+    arr2[STUDENT_ID].setP1(Point(24,31));
+    arr2[STUDENT_ID].setP2(Point(12,23));
+    arr2[STUDENT_ID].setP3(Point(14,22));
+
+    cout << arr2[STUDENT_ID] << endl;
 
     return 0;
 }

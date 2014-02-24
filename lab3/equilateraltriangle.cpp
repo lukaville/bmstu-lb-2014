@@ -1,9 +1,5 @@
 #include "equilateraltriangle.h"
 
-EquilateralTriangle::EquilateralTriangle()
-{
-}
-
 std::ostream &operator<<(std::ostream &output, EquilateralTriangle &triangle)
 {
     output << "Coordinates: \n";
@@ -11,6 +7,13 @@ std::ostream &operator<<(std::ostream &output, EquilateralTriangle &triangle)
     output << "Point 2: " << triangle.getP2().getX() << ", " << triangle.getP2().getY() << std::endl;
     output << "Point 3: " << triangle.getP3().getX() << ", " << triangle.getP3().getY() << std::endl;
     output << "Color: rgb(" << triangle.getColor().getRed() << ", " << triangle.getColor().getGreen() << ", " << triangle.getColor().getBlue() << ")" << std::endl << std::endl;
+    output << "lineWidth: " << triangle.lineWidth << ", radius: " << triangle.radius << std::endl;
 
     return output;
+}
+
+
+void EquilateralTriangle::expandRadius(double delta)
+{
+    this->radius += delta;
 }
