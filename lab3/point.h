@@ -5,6 +5,8 @@ class Point
 {
 public:
     Point();
+    Point (double x, double y);
+
     double getX() const;
     void setX(double value);
 

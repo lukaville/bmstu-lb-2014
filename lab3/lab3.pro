@@ -5,9 +5,10 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     triangle.cpp \
-    point.cpp
+    point.cpp \
+    color.cpp
 
 HEADERS += \
     triangle.h \
-    point.h
-
+    point.h \
+    color.h
