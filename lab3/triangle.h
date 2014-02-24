@@ -17,6 +17,8 @@ public:
         p2 = Point(0, 0);
         p3 = Point(0, 0);
         color = Color(0, 0, 0);
+
+        count++;
     }
 
     Triangle(Point p1, Point p2, Point p3)
@@ -25,6 +27,8 @@ public:
         this->p2 = p2;
         this->p3 = p3;
         this->color = Color(0, 0, 0);
+
+        count++;
     }
 
     Triangle(Point p1, Point p2, Point p3, Color color)
@@ -33,11 +37,13 @@ public:
         this->p2 = p2;
         this->p3 = p3;
         this->color = color;
+
+        count++;
     }
 
     ~Triangle()
     {
-        //nothing to do
+        count--;
     }
 
     Point getP1() const;
@@ -53,7 +59,7 @@ public:
     Color getColor() const;
     void setColor(const Color &value);
 
-
+    static int count;
 
 private:
     Point p1, p2, p3;

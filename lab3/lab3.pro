@@ -6,9 +6,11 @@ CONFIG -= qt
 SOURCES += main.cpp \
     triangle.cpp \
     point.cpp \
-    color.cpp
+    color.cpp \
+    equilateraltriangle.cpp
 
 HEADERS += \
     triangle.h \
     point.h \
-    color.h
+    color.h \
+    equilateraltriangle.h

@@ -66,6 +66,4 @@ std::ostream &operator<<(std::ostream &output, Triangle &triangle)
     return output;
 }
 
-
-
-
+int Triangle::count = 0;
