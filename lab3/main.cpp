@@ -54,7 +54,7 @@ int main()
     // t1.p1;
     // 'Point Triangle::p1' is private
 
-    cout << "\n\nСтатическая переменная Triangle::count = "  << Triangle::count << endl;
+    cout << "Статическая переменная Triangle::count = "  << Triangle::count << endl;
 
     return 0;
 }
