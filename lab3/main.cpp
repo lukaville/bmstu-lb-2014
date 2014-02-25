@@ -96,6 +96,10 @@ int main()
     Triangle sTr1("test");
     EquilateralTriangle sTr2("test");
 
+    // Mulitple inheritage
+    sTr2.setVertexCount(3);
+    cout << sTr2.getVertexCount();
+
     return 0;
 }
 

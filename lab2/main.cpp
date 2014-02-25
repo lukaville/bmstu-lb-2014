@@ -126,7 +126,7 @@ int main()
     cout.write(inp, 8);
     cout.put('X');
 
-    puts(inp);
+    puts("test");
 
 
     return 0;

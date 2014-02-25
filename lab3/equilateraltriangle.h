@@ -1,9 +1,10 @@
 #include "triangle.h"
+#include "shape.h"
 
 #ifndef EQUILATERALTRIANGLE_H
 #define EQUILATERALTRIANGLE_H
 
-class EquilateralTriangle : public Triangle
+class EquilateralTriangle : public Triangle, Shape
 {
 friend std::ostream &operator<<(std::ostream &output, EquilateralTriangle &triangle);
 
