@@ -11,7 +11,7 @@ char* get_info(void);
 
 extern int integer_additional_var;
 
-double get_random_float();
+double get_float();
 
 ostream &bbb(ostream &stream) {
     stream << endl << endl << endl;
@@ -83,7 +83,7 @@ int main()
 
     cout << "integer_additional_var = " << integer_additional_var << endl << endl;
 
-    cout << "get_random_float() = " << get_random_float() << endl << endl;
+    cout << "get_float() = " << get_float() << endl << endl;
 
     /* Pointer */
     int* integer_pointer = &int_var;
@@ -105,10 +105,10 @@ int main()
     /* Input and output for STL classes */
     cout << "Enter vector:\n";
 
-    vector<int> a; int temp;
+    vector<int> a; int x;
     for(int i = 0; i < 2; ++i) {
-        cin >> temp;
-        a.push_back(temp);
+        cin >> x;
+        a.push_back(x);
     }
 
     cout << "Enter string:\n";
@@ -116,10 +116,10 @@ int main()
     cin >> b;
     cout << b;
 
-    cout << "Enter point coordinate:\n";
+    cout << "\nEnter point coordinate:\n";
     CPoint p1;
-    cin >> temp;
-    p1.setX(temp); p1.setY(temp);
+    cin >> x;
+    p1.setX(x); p1.setY(x);
 
     cout << "Coordinates: " << p1.getX() << ", " << p1.getY() << endl << endl;
 
@@ -131,6 +131,8 @@ int main()
     cin.read(inp, 8);
     cout.write(inp, 8);
     cout.put('X');
+
+    cout << "\n";
 
     puts("test");
 
