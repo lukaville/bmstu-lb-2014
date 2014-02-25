@@ -103,8 +103,11 @@ int main()
     cout << bbb << 111 << endl << endl;
 
     /* Input and output for STL classes */
+    cout << "Enter vector:\n";
+
     vector<int> a; int temp;
-    for(int i = 0; i < 10; ++i) {
+    for(int i = 0; i < 2; ++i) {
+        cin >> temp;
         a.push_back(temp);
     }
 
