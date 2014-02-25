@@ -43,7 +43,7 @@ int main()
 
     /* Structures */
     Street tmp_street = {"Ленинский проспект", "Москва", "Измайлово", "Россия"};
-    cout << "Steet: " << tmp_street.name  << ", city: " << tmp_street.city << ", district:" << tmp_street.district << "country: " << tmp_street.country << endl;
+    cout << "Steet: " << tmp_street.name  << ", city: " << tmp_street.city << ", district:" << tmp_street.district << "\ncountry: " << tmp_street.country << endl;
 
     Street streets[] = {tmp_street, tmp_street, tmp_street};
 

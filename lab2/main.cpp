@@ -11,7 +11,7 @@ char* get_info(void);
 
 extern int integer_additional_var;
 
-double get_random_double();
+double get_random_float();
 
 ostream &bbb(ostream &stream) {
     stream << endl << endl << endl;
@@ -24,7 +24,7 @@ int main()
     int int_var;
     cout << "Введите int_var: ";
     cin >> int_var;
-    cout << "Введено int_var = " << int_var << endl << endl;
+    cout << "Вв1едено int_var = " << int_var << endl << endl;
 
     double double_var;
     cout << "Введите double_var: ";
@@ -83,7 +83,7 @@ int main()
 
     cout << "integer_additional_var = " << integer_additional_var << endl << endl;
 
-    cout << "get_random_double() = " << get_random_double() << endl << endl;
+    cout << "get_random_float() = " << get_random_float() << endl << endl;
 
     /* Pointer */
     int* integer_pointer = &int_var;
@@ -111,14 +111,17 @@ int main()
         a.push_back(temp);
     }
 
+    cout << "Enter string:\n";
     string b;
     cin >> b;
+    cout << b;
 
+    cout << "Enter point coordinate:\n";
     CPoint p1;
     cin >> temp;
     p1.setX(temp); p1.setY(temp);
 
-    cout << p1.getX() << p1.getY() << endl << endl;
+    cout << "Coordinates: " << p1.getX() << ", " << p1.getY() << endl << endl;
 
     /* Stream special methods */
     cin.get();
