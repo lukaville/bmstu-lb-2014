@@ -7,5 +7,6 @@ SOURCES += main.cpp
 
 HEADERS += \
     line.h \
-    cpoint.h
+    cpoint.h \
+    longline.h
 

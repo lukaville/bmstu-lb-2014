@@ -1,9 +1,7 @@
-#include "cpoint.h"
-
 template<typename T, int initFillType = 0>
 class Line
 {
-private:
+protected:
     CPoint<T> p1;
     CPoint<T> p2;
     int lineWidth;
@@ -23,6 +21,14 @@ public:
         this->p2 = p2;
         this->lineWidth = 1;
         this->fillType = initFillType;
+    }
+
+    Line(CPoint<T> p1, CPoint<T> p2, int fillType, int lineWidth)
+    {
+        this->p1 = p1;
+        this->p2 = p2;
+        this->lineWidth = lineWidth;
+        this->fillType = fillType;
     }
 
     CPoint<T> getP1() const

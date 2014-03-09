@@ -1,5 +1,7 @@
 #include <iostream>
+#include "cpoint.h"
 #include "line.h"
+#include "longline.h"
 
 #define max_of_three(a, b, c) (( a > b)?(( a > c)? a : c):((b >  c) ? b : c))
 
@@ -100,6 +102,11 @@ int main()
     line7.move(3, 3);
     cout << "Линия long с начальной закраской:" << endl;
     line7.print(); cout << endl << endl;
+
+    // Inheritance
+    LongLine line8(CPoint<long>(65,2), CPoint<long>(4,42), 3, 4, 5);
+    cout << "Линия LongLine с начальной закраской:" << endl;
+    line8.print(); cout << endl << endl;
 
     return 0;
 }
