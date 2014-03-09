@@ -17,6 +17,16 @@ void swap(T* p1, T* p2)
     *p2 = temp;
 }
 
+template<typename T>
+void foo() {
+    cout << "foo()" << endl;
+}
+
+template<>
+void foo<int>() {
+    cout << "foo<int>()" << endl;
+}
+
 template<typename T, int size>
 T multiplyArray(T* array) {
     T result = 1;
@@ -127,6 +137,12 @@ int main()
     for(auto line : vectorOfLines) {
         line.print();
     }
+
+    // Function template specification
+    cout << endl;
+    foo<double>();
+    foo<float>();
+    foo<int>();
 
     return 0;
 }
