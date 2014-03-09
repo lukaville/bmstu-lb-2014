@@ -12,6 +12,17 @@ void swap(T* p1, T* p2)
     *p2 = temp;
 }
 
+template<typename T, int size>
+T multiplyArray(T* array) {
+    T result = 1;
+
+    for(int i = 0; i < size; ++i) {
+        result *= array[i];
+    }
+
+    return result;
+}
+
 int main()
 {
     // Using macros max of three
@@ -41,6 +52,24 @@ int main()
     cout << "До Swap: d1 = " << *d1 << " d2 = " << *d2 << endl;
     swap<double>(d1, d2);
     cout << "После Swap:  d1 = " << *d1 << " d2 = " << *d2 << endl;
+
+    // Array multiplication
+    int* int_arr = new int[10];
+    double* double_arr = new double[10];
+    float* float_arr = new float[10];
+
+    for(int i = 0; i < 4; ++i) {
+        int_arr[i] = 2 * (i + 1);
+        double_arr[i] = 2.1 * (i + 1);
+        float_arr[i] = 2.4 * (i + 1);
+    }
+
+    cout << "Произведение int_arr = " << multiplyArray<int, 4>(int_arr) << endl;
+    cout << "Произведение double_arr = " << multiplyArray<double, 4>(double_arr) << endl;
+    cout << "Произведение float_arr = " << multiplyArray<float, 4>(float_arr) << endl;
+
+    // Class template with one argument
+
 
     return 0;
 }
