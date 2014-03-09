@@ -8,7 +8,7 @@ private:
 public:
     Shape() {
         vertexCount = 0;
-    };
+    }
     int getVertexCount() const;
     void setVertexCount(int value);
 };

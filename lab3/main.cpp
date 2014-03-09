@@ -61,7 +61,7 @@ int main()
     EquilateralTriangle eqTr1(Point(0, 0), Point(1, 2), Point(3, 4), Color(255, 124, 23), 2, 3);
     cout << eqTr1;
 
-    EquilateralTriangle eqTr2();
+    EquilateralTriangle eqTr2;
     cout << eqTr2;
 
     eqTr1.getColor();
@@ -94,10 +94,10 @@ int main()
 
     // string type demonstration
     Triangle sTr1("test");
-    EquilateralTriangle sTr2("test");
+    EquilateralTriangle sTr2("tst");
 
     // Mulitple inheritage
-    sTr2.setVertexCount(3);
+    sTr2.setVertexCount(2);
     cout << sTr2.getVertexCount();
 
     return 0;

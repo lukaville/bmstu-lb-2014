@@ -4,7 +4,7 @@
 #ifndef EQUILATERALTRIANGLE_H
 #define EQUILATERALTRIANGLE_H
 
-class EquilateralTriangle : public Triangle, Shape
+class EquilateralTriangle : public Triangle, public Shape
 {
 friend std::ostream &operator<<(std::ostream &output, EquilateralTriangle &triangle);
 
