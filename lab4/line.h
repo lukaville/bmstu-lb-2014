@@ -58,12 +58,15 @@ public:
     int getFillType() const;
     void setFillType(int value);
 
-    void move(T dx, T dy)
-    {
-        this->p1 = CPoint<T>(p1.getX() + dx, p1.getY() + dy);
-        this->p2 = CPoint<T>(p2.getX() + dx, p2.getY() + dy);
-    }
+    void move(T dx, T dy);
 };
+
+template<typename T, int initFillType>
+void Line<T, initFillType>::move(T dx, T dy)
+{
+    this->p1 = CPoint<T>(p1.getX() + dx, p1.getY() + dy);
+    this->p2 = CPoint<T>(p2.getX() + dx, p2.getY() + dy);
+}
 
 
 
