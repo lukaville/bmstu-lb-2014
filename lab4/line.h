@@ -1,4 +1,4 @@
-template<typename T, int initFillType = 0>
+template<typename T = int, int initFillType = 0>
 class Line
 {
 protected:
@@ -74,6 +74,16 @@ void Line<T, initFillType>::move(T dx, T dy)
     this->p2 = CPoint<T>(p2.getX() + dx, p2.getY() + dy);
 }
 
+template<>
+class Line<short>
+{
+public:
+    Line() {}
+
+    void print() {
+        std::cout << "short" << std::endl;
+    };
+};
 
 
 

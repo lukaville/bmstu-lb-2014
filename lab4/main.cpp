@@ -5,7 +5,7 @@
 
 #include <vector>
 
-#define max_of_three(a, b, c) (( a > b)?(( a > c)? a : c):((b >  c) ? b : c))
+#define max_of_three(a, b, c) ((a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c))
 
 using namespace std;
 
@@ -39,6 +39,18 @@ T multiplyArray(T* array) {
 }
 
 typedef Line<int> IntLine;
+
+template <
+    typename T,
+    template<typename, typename> class ContainerType,
+    typename Alloc = std::allocator<T>
+>
+class FooBar
+{
+public:
+    ContainerType<T, Alloc> bar;
+};
+
 
 int main()
 {
@@ -138,11 +150,23 @@ int main()
         line.print();
     }
 
-    // Function template specification
+    // Function template specification demo
     cout << endl;
     foo<double>();
     foo<float>();
     foo<int>();
+    cout << endl;
+
+    // Class template specification demo
+    Line<short> line10;
+    line10.print();
+
+    // Template as template argument
+    FooBar<int, std::vector> test;
+    test.bar.push_back(5);
+    cout << test.bar[0];
+
+
 
     return 0;
 }
