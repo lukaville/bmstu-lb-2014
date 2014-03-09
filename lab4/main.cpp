@@ -41,14 +41,28 @@ T multiplyArray(T* array) {
 typedef Line<int> IntLine;
 
 template <
-    typename T,
-    template<typename, typename> class ContainerType,
-    typename Alloc = std::allocator<T>
->
+        typename T,
+        template<typename, typename> class ContainerType,
+        typename Alloc = std::allocator<T>
+        >
 class FooBar
 {
 public:
     ContainerType<T, Alloc> bar;
+};
+
+int i = 77;
+template <int& var> class BarFoo
+{
+public:
+    BarFoo()
+    {
+        cout << "var = " << var << endl;
+    };
+    ~BarFoo()
+    {
+        cout << "~var = " << var << endl;
+    }
 };
 
 
@@ -164,9 +178,22 @@ int main()
     // Template as template argument
     FooBar<int, std::vector> test;
     test.bar.push_back(5);
-    cout << test.bar[0];
+    cout << test.bar[0] << endl;
 
+    // Global variable as parameter of template
+    BarFoo<i>* bf = new BarFoo<i>();
+    i = 12;
+    delete bf;
 
+    // Using MFC classes demo
+
+    /*
+    CArray<Line<int>> CArrayOfLines;
+    CArrayOfLines.Add(line1);
+    CArrayOfLines.Add(line1);
+    CArrayOfLines.Add(line1);
+    CArrayOfLines[0].print();
+    */
 
     return 0;
 }
