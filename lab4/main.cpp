@@ -3,6 +3,8 @@
 #include "line.h"
 #include "longline.h"
 
+#include <vector>
+
 #define max_of_three(a, b, c) (( a > b)?(( a > c)? a : c):((b >  c) ? b : c))
 
 using namespace std;
@@ -25,6 +27,8 @@ T multiplyArray(T* array) {
 
     return result;
 }
+
+typedef Line<int> IntLine;
 
 int main()
 {
@@ -107,6 +111,22 @@ int main()
     LongLine line8(CPoint<long>(65,2), CPoint<long>(4,42), 3, 4, 5);
     cout << "Линия LongLine с начальной закраской:" << endl;
     line8.print(); cout << endl << endl;
+
+    // Typedef demo
+    IntLine line9(CPoint<int>(65,2), CPoint<int>(4,42));
+    line9.move(3, 3);
+    cout << "Линия на основе typedef (int):" << endl;
+    line9.print(); cout << endl << endl;
+
+    // STL demo
+    vector<Line<int>> vectorOfLines;
+    vectorOfLines.push_back(line1);
+    vectorOfLines.push_back(line1);
+    vectorOfLines.push_back(line1);
+
+    for(auto line : vectorOfLines) {
+        line.print();
+    }
 
     return 0;
 }
