@@ -1,4 +1,5 @@
 #include <iostream>
+#include "line.h"
 
 #define max_of_three(a, b, c) (( a > b)?(( a > c)? a : c):((b >  c) ? b : c))
 
@@ -66,10 +67,20 @@ int main()
 
     cout << "Произведение int_arr = " << multiplyArray<int, 4>(int_arr) << endl;
     cout << "Произведение double_arr = " << multiplyArray<double, 4>(double_arr) << endl;
-    cout << "Произведение float_arr = " << multiplyArray<float, 4>(float_arr) << endl;
+    cout << "Произведение float_arr = " << multiplyArray<float, 4>(float_arr) << endl << endl;
 
     // Class template with one argument
+    Line<int> line1(CPoint<int>(1,2), CPoint<int>(3,4));
+    cout << "Линия int:" << endl;
+    line1.print(); cout << endl;
 
+    Line<float> line2(CPoint<float>(6.2,1.2), CPoint<float>(9.1,42.3));
+    cout << "Линия float:" << endl;
+    line2.print(); cout << endl;
+
+    Line<double> line3(CPoint<double>(5.5,9.1), CPoint<double>(8.1,2.2));
+    cout << "Линия double:" << endl;
+    line3.print(); cout << endl;
 
     return 0;
 }
