@@ -80,7 +80,20 @@ int main()
 
     Line<double> line3(CPoint<double>(5.5,9.1), CPoint<double>(8.1,2.2));
     cout << "Линия double:" << endl;
-    line3.print(); cout << endl;
+    line3.print(); cout << endl << endl;
+
+    // Class template with three arguments
+    Line<int, 3> line4(CPoint<int>(1,2), CPoint<int>(3,4));
+    cout << "Линия int:" << endl;
+    line4.print(); cout << endl;
+
+    Line<float, 8> line5(CPoint<float>(6.2,1.2), CPoint<float>(9.1,42.3));
+    cout << "Линия float:" << endl;
+    line5.print(); cout << endl;
+
+    Line<double, 2> line6(CPoint<double>(5.5,9.1), CPoint<double>(8.1,2.2));
+    cout << "Линия double:" << endl;
+    line6.print(); cout << endl << endl;
 
     return 0;
 }

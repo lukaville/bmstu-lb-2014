@@ -1,6 +1,6 @@
 #include "cpoint.h"
 
-template<typename T>
+template<typename T, int initFillType = 0>
 class Line
 {
 private:
@@ -14,7 +14,7 @@ public:
         this->p1 = CPoint<T>(0, 0);
         this->p2 = CPoint<T>(0, 0);
         this->lineWidth = 1;
-        this->fillType = 0;
+        this->fillType = initFillType;
     }
 
     Line(CPoint<T> p1, CPoint<T> p2)
@@ -22,7 +22,7 @@ public:
         this->p1 = p1;
         this->p2 = p2;
         this->lineWidth = 1;
-        this->fillType = 0;
+        this->fillType = initFillType;
     }
 
     CPoint<T> getP1() const
