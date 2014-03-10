@@ -9,5 +9,6 @@ SOURCES += main.cpp
 HEADERS += \
     line.h \
     cpoint.h \
-    longline.h
+    longline.h \
+    fillline.h
 

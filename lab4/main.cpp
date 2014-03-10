@@ -2,6 +2,7 @@
 #include "cpoint.h"
 #include "line.h"
 #include "longline.h"
+#include "fillline.h"
 
 #include <vector>
 
@@ -58,7 +59,7 @@ public:
     BarFoo()
     {
         cout << "var = " << var << endl;
-    };
+    }
     ~BarFoo()
     {
         cout << "~var = " << var << endl;
@@ -147,6 +148,19 @@ int main()
     LongLine line8(CPoint<long>(65,2), CPoint<long>(4,42), 3, 4, 5);
     cout << "Линия LongLine с начальной закраской:" << endl;
     line8.print(); cout << endl << endl;
+
+    // Template inheritance
+    FillLine<char> line12;
+    cout << "Линия FillLine:" << endl;
+    line12.print(); cout << endl << endl;
+
+    FillLine<int> line13;
+    cout << "Линия FillLine:" << endl;
+    line13.print(); cout << endl << endl;
+
+    FillLine<float> line14;
+    cout << "Линия FillLine:" << endl;
+    line14.print(); cout << endl << endl;
 
     // Typedef demo
     IntLine line9(CPoint<int>(65,2), CPoint<int>(4,42));
