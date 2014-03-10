@@ -37,10 +37,6 @@ int main()
     // multiply(1.1, 2.1);
 
     // Overriding operators
-    Rectangle r;
-
-    cin >> r;
-    cout << r;
 
     return 0;
 }

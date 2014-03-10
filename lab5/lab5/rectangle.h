@@ -13,6 +13,24 @@ public:
     Rectangle();
     friend std::ostream &operator<<(std::ostream &output, Rectangle &rect);
     friend std::istream &operator>>(std::istream &input, Rectangle &rect);
+
+    // Unary +
+    friend const Rectangle& operator+(const Rectangle& i);
+
+    // Unary -
+    friend const Rectangle operator-(const Rectangle& i);
+
+    // Prefix inc
+    friend const Rectangle& operator++(Rectangle& i);
+
+    // Postfix inc
+    friend const Rectangle operator++(Rectangle& i, int);
+
+    // Prefix dec
+    friend const Rectangle& operator--(Rectangle& i);
+
+    // Postfix dec
+    friend const Rectangle operator--(Rectangle& i, int);
 };
 
 #endif // RECTANGLE_H
