@@ -36,7 +36,13 @@ int main()
 
     // multiply(1.1, 2.1);
 
-    // Overriding operators
+    // Overriding operators ++, --
+    Rectangle r1;
+    cin >> r1;
+    r1++;
+    cout << r1;
+    r1--; r1--;
+    cout << r1;
 
     return 0;
 }

@@ -14,15 +14,6 @@ const Rectangle& operator++(Rectangle& i) {
     return i;
 }
 
-const Rectangle operator++(Rectangle& i, int) {
-    Rectangle oldValue = i;
-    i.p1.setX(i.p1.getX() + 1);
-    i.p1.setY(i.p1.getY() + 1);
-    i.p2.setX(i.p2.getX() + 1);
-    i.p2.setY(i.p2.getY() + 1);
-    return oldValue;
-}
-
 const Rectangle& operator--(Rectangle& i) {
     i.p1.setX(i.p1.getX() - 1);
     i.p1.setY(i.p1.getY() - 1);
