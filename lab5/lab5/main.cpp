@@ -1,6 +1,7 @@
 #include <iostream>
 #include "main.h"
 #include "rectangle.h"
+#include "rectangle1.h"
 
 using namespace std;
 
@@ -36,13 +37,28 @@ int main()
 
     // multiply(1.1, 2.1);
 
-    // Overriding operators ++, --
+    // Overloading operators ++, -- demo
     Rectangle r1;
     cin >> r1;
     r1++;
     cout << r1;
-    r1--; r1--;
-    cout << r1;
+    r1--; --r1;
+    cout << r1 << endl;
+
+    // Overloading operators + and - demo
+    Rectangle rp, rq, rr;
+    rp++; rq--;
+    rr = rp + rq;
+    rp = rp - rq;
+
+    cout << rr << rp;
+
+    // Rectangle 1
+    Rectangle1 t1, t2, t3;
+    t1++; t1++; t2--; t2--;
+    t3 = t1 * t2;
+    t3 = t3 - t1;
+    cout << t3;
 
     return 0;
 }

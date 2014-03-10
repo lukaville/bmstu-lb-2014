@@ -32,6 +32,18 @@ public:
 
     // Postfix dec
     friend const Rectangle operator--(Rectangle& i, int);
+
+    // Plus and minus
+    friend const Rectangle operator+(const Rectangle& left, const Rectangle& right);
+
+    friend const Rectangle operator-(const Rectangle& left, const Rectangle& right) {
+        Rectangle r;
+        r.p1.setX(left.p1.getX() - right.p1.getX());
+        r.p1.setY(left.p1.getY() - right.p1.getY());
+        r.p2.setX(left.p2.getX() - right.p2.getX());
+        r.p2.setY(left.p2.getY() - right.p2.getY());
+        return r;
+    }
 };
 
 #endif // RECTANGLE_H

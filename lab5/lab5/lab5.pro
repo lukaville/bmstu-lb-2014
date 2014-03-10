@@ -5,10 +5,12 @@ CONFIG -= qt
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    rectangle.cpp
+    rectangle.cpp \
+    rectangle1.cpp
 
 HEADERS += \
     main.h \
     rectangle.h \
-    cpoint.h
+    cpoint.h \
+    rectangle1.h
 
