@@ -58,5 +58,9 @@ double multiply(double a, double b) {
     return a * b;
 }
 
+double multiply(double a, double b, double c = 1.3) {
+    return a * b * c;
+}
+
 
 #endif // MAIN_H

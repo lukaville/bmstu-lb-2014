@@ -33,6 +33,8 @@ int main()
     cout << multiply(1, 2) << endl;
     cout << multiply(1.2, 1.3) << endl;
 
+    // multiply(1.1, 2.1);
+
 
 
     return 0;
