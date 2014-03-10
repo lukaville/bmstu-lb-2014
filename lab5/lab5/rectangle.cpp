@@ -53,7 +53,7 @@ std::istream &operator>>(std::istream &input, Rectangle &rectangle)
 
 std::ostream &operator<<(std::ostream &output, Rectangle &rectangle) {
     output << "P1: (" << rectangle.p1.getX() << ", " << rectangle.p1.getY() << ")" << std::endl;
-    output << "p2: (" << rectangle.p2.getX() << ", " << rectangle.p2.getY() << ")" << std::endl;
+    output << "P2: (" << rectangle.p2.getX() << ", " << rectangle.p2.getY() << ")" << std::endl;
     return output;
 }
 

@@ -6,11 +6,13 @@ CONFIG += c++11
 
 SOURCES += main.cpp \
     rectangle.cpp \
-    rectangle1.cpp
+    rectangle1.cpp \
+    square.cpp
 
 HEADERS += \
     main.h \
     rectangle.h \
     cpoint.h \
-    rectangle1.h
+    rectangle1.h \
+    square.h
 

@@ -2,6 +2,7 @@
 #include "main.h"
 #include "rectangle.h"
 #include "rectangle1.h"
+#include "square.h"
 
 using namespace std;
 
@@ -59,6 +60,14 @@ int main()
     t3 = t1 * t2;
     t3 = t3 - t1;
     cout << t3;
+
+    // Square inheritance
+    Square c1;
+    cout << c1;
+
+    c1++;
+
+    cout << c1;
 
     return 0;
 }

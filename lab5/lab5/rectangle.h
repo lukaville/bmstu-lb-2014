@@ -6,7 +6,7 @@
 
 class Rectangle
 {
-private:
+protected:
     CPoint<int> p1;
     CPoint<int> p2;
 public:
