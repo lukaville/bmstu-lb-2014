@@ -5,6 +5,7 @@ CONFIG -= qt
 CONFIG += c++11
 
 SOURCES += main.cpp
+SOURCES +=
 
 HEADERS += \
     event.h

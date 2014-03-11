@@ -71,13 +71,14 @@ public:
         eventType = value;
     }
 
-    void print()
-    {
-        std::cout << name << std::endl;
-        std::cout << "===========================" << std::endl;
-        std::cout << city << std::endl;
-        std::cout << timestamp << std::endl;
-        std::cout << eventType << std::endl << std::endl;
+    friend std::ostream &operator<<(std::ostream &output, Event &e){
+        output << e.getName() << std::endl;
+        output << "===========================" << std::endl;
+        output << e.getCity() << std::endl;
+        output << e.getTimestamp() << std::endl;
+        output << e.getEventType() << std::endl << std::endl;
+
+        return output;
     }
 };
 

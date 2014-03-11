@@ -20,7 +20,7 @@ int main()
     }
 
     for (Event<> e : events) {
-        e.print();
+        cout << e;
     }
 
     return 0;
