@@ -51,6 +51,13 @@ public:
     CPoint<int>& operator [] (unsigned i) {
         return points.at(i);
     }
+
+    Rectangle& operator=(const Rectangle& r)
+    {
+      this->p1 = r.p1;
+      this->p2 = r.p2;
+      return *this;
+    }
 };
 
 #endif // RECTANGLE_H

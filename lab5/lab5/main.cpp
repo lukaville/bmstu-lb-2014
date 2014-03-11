@@ -72,7 +72,10 @@ int main()
     // Indexing operator demo
     cout << r1[0].getX() << endl;
 
+    // Operator = demo
 
+    rr = rp;
+    cout << rr;
 
 
     return 0;
