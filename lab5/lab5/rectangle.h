@@ -64,6 +64,38 @@ public:
         this->p2 = r.p2;
         return *this;
     }
+
+    bool operator > (Rectangle& r)
+    {
+        int s1 = (this->p2.getY() - this->p1.getY())*(this->p2.getX() - this->p1.getX());
+        int s2 = (r.p2.getY() - r.p1.getY())*(r.p2.getX() - r.p1.getX());
+
+        return s1 > s2;
+    }
+
+    bool operator < (Rectangle& r)
+    {
+        int s1 = (this->p2.getY() - this->p1.getY())*(this->p2.getX() - this->p1.getX());
+        int s2 = (r.p2.getY() - r.p1.getY())*(r.p2.getX() - r.p1.getX());
+
+        return s1 < s2;
+    }
+
+    bool operator == (Rectangle& r)
+    {
+        return (this->p1.getX() == r.p1.getX() &&
+            this->p1.getY() == r.p1.getY() &&
+            this->p2.getX() == r.p2.getX() &&
+            this->p2.getY() == r.p2.getY());
+    }
+
+    bool operator != (Rectangle& r)
+    {
+        return (this->p1.getX() != r.p1.getX() ||
+            this->p1.getY() != r.p1.getY() ||
+            this->p2.getX() != r.p2.getX() ||
+            this->p2.getY() != r.p2.getY());
+    }
 };
 
 #endif // RECTANGLE_H
