@@ -43,7 +43,7 @@ std::istream &operator>>(std::istream &input, Rectangle &rectangle)
     rectangle.p1.setX(x);
     rectangle.p1.setY(y);
 
-    std::cout << "\nEnter second point (x, y): ";
+    std::cout << "\nEnter second point (x, y): \n";
 
     input >> x >> y;
 

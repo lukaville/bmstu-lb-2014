@@ -13,6 +13,12 @@ protected:
     std::vector<CPoint<int>> points;
 public:
     Rectangle();
+
+    Rectangle(const Rectangle& r){
+        this->p1 = CPoint<int>(r.p1.getX(), r.p1.getY());
+        this->p2 = CPoint<int>(r.p2.getX(), r.p2.getY());
+    }
+
     friend std::ostream &operator<<(std::ostream &output, Rectangle &rect);
     friend std::istream &operator>>(std::istream &input, Rectangle &rect);
 
@@ -54,9 +60,9 @@ public:
 
     Rectangle& operator=(const Rectangle& r)
     {
-      this->p1 = r.p1;
-      this->p2 = r.p2;
-      return *this;
+        this->p1 = r.p1;
+        this->p2 = r.p2;
+        return *this;
     }
 };
 
