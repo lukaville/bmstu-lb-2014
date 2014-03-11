@@ -3,12 +3,14 @@
 
 #include "cpoint.h"
 #include <iostream>
+#include <vector>
 
 class Rectangle
 {
 protected:
     CPoint<int> p1;
     CPoint<int> p2;
+    std::vector<CPoint<int>> points;
 public:
     Rectangle();
     friend std::ostream &operator<<(std::ostream &output, Rectangle &rect);
@@ -43,6 +45,11 @@ public:
         r.p2.setX(left.p2.getX() - right.p2.getX());
         r.p2.setY(left.p2.getY() - right.p2.getY());
         return r;
+    }
+
+    // [] operator overloading
+    CPoint<int>& operator [] (unsigned i) {
+        return points.at(i);
     }
 };
 

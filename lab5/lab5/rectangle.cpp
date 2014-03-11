@@ -4,6 +4,8 @@ Rectangle::Rectangle()
 {
     this->p1 = CPoint<int>(0, 0);
     this->p2 = CPoint<int>(0, 0);
+    this->points.push_back(p1);
+    this->points.push_back(p2);
 }
 
 const Rectangle& operator++(Rectangle& i) {

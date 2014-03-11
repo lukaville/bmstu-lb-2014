@@ -69,6 +69,12 @@ int main()
 
     cout << c1;
 
+    // Indexing operator demo
+    cout << r1[0].getX() << endl;
+
+
+
+
     return 0;
 }
 
