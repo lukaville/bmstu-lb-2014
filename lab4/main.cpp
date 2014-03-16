@@ -3,7 +3,6 @@
 #include "line.h"
 #include "longline.h"
 #include "fillline.h"
-
 #include <vector>
 
 #define max_of_three(a, b, c) ((a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c))

@@ -10,7 +10,6 @@ int main()
 {
     q = -32;
 
-
     // Default arguments in prototype
     cout << maximum(1, 2, 3) << endl;
     cout << maximum(1, 2) << endl;
@@ -73,7 +72,6 @@ int main()
     cout << r1[0].getX() << endl;
 
     // Operator = demo
-
     rr = rp;
     cout << rr;
 
