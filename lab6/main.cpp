@@ -16,5 +16,17 @@ int main()
     d2.print();
     d3.print();
 
+    cout << endl;
+
+    Deriv1* pd1 = &d1;
+    Deriv2* pd2 = &d2;
+    Deriv3* pd3 = &d3;
+
+    pd1->print();
+    pd2->print();
+    pd3->print();
+
+    cout << endl;
+
     return 0;
 }
