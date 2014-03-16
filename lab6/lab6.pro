@@ -3,10 +3,11 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp \
-    cobject.cpp
+SOURCES += main.cpp
 
 HEADERS += \
     main.h \
-    cobject.h
+    cobject.h \
+    coblist.h \
+    position.h
 

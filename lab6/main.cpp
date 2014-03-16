@@ -1,4 +1,5 @@
 #include <iostream>
+#include "coblist.h"
 #include "main.h"
 
 using namespace std;
@@ -27,6 +28,35 @@ int main()
     pd3->print();
 
     cout << endl;
+
+    pAbs = pd1;
+    pAbs->print();
+
+    pAbs = pd2;
+    pAbs->print();
+
+    pAbs = pd3;
+    pAbs->print();
+
+    cout << endl;
+
+    CObList ListDer;
+    for(int i = 0; i < 2; ++i) {
+        ListDer.AddTail(new Deriv1(i));
+    }
+
+    for(int i = 0; i < 2; ++i) {
+        ListDer.AddTail(new Deriv2(i));
+    }
+
+    for(int i = 0; i < 2; ++i) {
+        ListDer.AddTail(new Deriv3(i));
+    }
+
+    for(POSITION pos = ListDer.GetHeadPosition(); pos != NULL;) {
+        ((Abstr*) ListDer.GetNext(pos))->print();
+        cout << endl;
+    }
 
     return 0;
 }

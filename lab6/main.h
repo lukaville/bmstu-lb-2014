@@ -8,6 +8,7 @@ class Abstr : public CObject
 public:
     Abstr() {}
     Abstr(float fPar) {
+        std::cout << "Calling constructor abstr..." << std::endl;
         this->fPar = fPar;
     }
     float fPar;

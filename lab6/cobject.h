@@ -4,7 +4,7 @@
 class CObject
 {
 public:
-    CObject();
+    CObject() {};
 };
 
 #endif // COBJECT_H
