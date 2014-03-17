@@ -11,5 +11,6 @@ HEADERS += \
     main.h \
     cobject.h \
     coblist.h \
-    position.h
+    position.h \
+    virtual_classes.h
 

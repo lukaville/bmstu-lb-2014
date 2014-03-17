@@ -1,6 +1,7 @@
 #include <iostream>
 #include "coblist.h"
 #include "main.h"
+#include "virtual_classes.h"
 
 using namespace std;
 
@@ -78,6 +79,28 @@ int main()
         ((Abstr*) ListDer.GetNext(pos))->print();
         cout << endl;
     }
+
+
+    // Clear
+    ListDer.RemoveAll();
+
+    // Print
+    cout << "Cleared list:" << endl;
+    for(POSITION pos = ListDer.GetHeadPosition(); pos != NULL;) {
+        Abstr *p = ((Abstr*) ListDer.GetNext(pos));
+        p->print();
+
+        cout << endl;
+    }
+
+    cout << endl;
+
+    // Virtual classes demo
+    L testL(1, 1.234, 2.345, 3.456);
+    cout << testL.a << endl;
+    cout << testL.b << endl;
+    cout << testL.c << endl;
+    cout << testL.d << endl;
 
     return 0;
 }

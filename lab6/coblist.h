@@ -21,11 +21,18 @@ public:
     }
 
     POSITION GetHeadPosition() {
-        return new _POSITION(0);
+        if (list.size() == 0) {
+            return NULL;
+        } else {
+            return new _POSITION(0);
+        }
     }
 
     CObject* GetNext(POSITION &pos) {
-        CObject* result = list.at(pos->getI());
+        CObject* result;
+        if (list.size() > 0) {
+            result = list.at(pos->getI());
+        }
 
         if ((unsigned) (*pos).getI() + 1 >= list.size()) {
             pos = NULL;
@@ -40,6 +47,10 @@ public:
 
     void RemoveAt(POSITION pos) {
         list.erase(list.begin() + pos->getI());
+    }
+
+    void RemoveAll() {
+        list.clear();
     }
 
 };
