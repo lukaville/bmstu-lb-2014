@@ -53,6 +53,27 @@ int main()
         ListDer.AddTail(new Deriv3(i));
     }
 
+    cout << "CObList demo:" << endl;
+    for(POSITION pos = ListDer.GetHeadPosition(); pos != NULL;) {
+        Abstr* a = ((Abstr*) ListDer.GetNext(pos));
+
+        if (a != NULL) {
+            a->print();
+        }
+
+        cout << endl;
+    }
+
+    // Removing second element
+    POSITION pos1 = ListDer.GetHeadPosition();
+    const int removePosition = 2;
+    for(int i = 0; i < removePosition - 1; ++i) {
+        ListDer.GetNext(pos1);
+    }
+    ListDer.RemoveAt(pos1);
+
+    // Print
+    cout << "List with one removed element:" << endl;
     for(POSITION pos = ListDer.GetHeadPosition(); pos != NULL;) {
         ((Abstr*) ListDer.GetNext(pos))->print();
         cout << endl;

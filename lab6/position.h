@@ -10,7 +10,7 @@ public:
         this->i = i;
     };
     void plus() {
-        i++;
+         i++;
     }
 
     void minus() {
