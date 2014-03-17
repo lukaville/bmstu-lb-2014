@@ -12,7 +12,7 @@ public:
         this->fPar = fPar;
     }
     virtual ~Abstr() {
-        cout << "~Abstr()" << endl;
+        std::cout << "~Abstr()" << std::endl;
     }
     float fPar;
     virtual void print() = 0;
@@ -26,7 +26,7 @@ public:
         this->fDPar = fdPar;
     }
     virtual ~Deriv1() {
-        cout << "~Deriv1()" << endl;
+        std::cout << "~Deriv1()" << std::endl;
     }
     float fDPar;
     virtual void print() {
@@ -43,7 +43,7 @@ public:
         this->fDPar = fdPar;
     }
     virtual ~Deriv2() {
-        cout << "~Deriv2()" << endl;
+        std::cout << "~Deriv2()" << std::endl;
     }
     float fDPar;
     virtual void print() {
@@ -60,7 +60,7 @@ public:
         this->fDPar = fdPar;
     }
     virtual ~Deriv3() {
-        cout << "~Deriv3()" << endl;
+        std::cout << "~Deriv3()" << std::endl;
     }
     float fDPar;
     virtual void print() {

@@ -4,7 +4,8 @@
 class CObject
 {
 public:
-    CObject() {};
+    CObject() {}
+    virtual ~CObject() {}
 };
 
 #endif // COBJECT_H

@@ -82,6 +82,9 @@ int main()
 
 
     // Clear
+    for(POSITION pos = ListDer.GetHeadPosition(); pos != NULL;) {
+        delete ListDer.GetNext(pos);
+    }
     ListDer.RemoveAll();
 
     // Print
@@ -101,6 +104,8 @@ int main()
     cout << testL.b << endl;
     cout << testL.c << endl;
     cout << testL.d << endl;
+
+
 
     return 0;
 }
