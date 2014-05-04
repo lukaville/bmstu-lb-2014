@@ -1,16 +1,16 @@
-#ifndef EVENTARRAY_H
-#define EVENTARRAY_H
+#ifndef EVENT_CONTAINER_H
+#define EVENT_CONTAINER_H
 
-#include "event.h"
-#include <vector>
+#include "simpleevent.h"
+#include <QList>
 
 class EventArray
 {
 private:
-    std::vector<Event> events;
+    std::vector<SimpleEvent> events;
 public:
     EventArray();
     ~EventArray();
 };
 
-#endif // EVENTARRAY_H
+#endif // EVENT_CONTAINER_H

@@ -32,6 +32,8 @@ private slots:
 
     void on_search_object_by_time_triggered();
 
+    void on_action_help_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

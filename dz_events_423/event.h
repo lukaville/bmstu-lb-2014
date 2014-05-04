@@ -19,7 +19,7 @@
 class Event
 {
 private:
-    static QString EVENT_TYPE_TITLES[8] = {"Неизвестный тип",
+    QString EVENT_TYPE_TITLES[8] = {"Неизвестный тип",
                                       "Конференция",
                                       "Семинар",
                                       "Лекция",
@@ -34,6 +34,8 @@ private:
     int eventType;
 
 public:
+    Event() {}
+
     Event(QString name, QString city, QDate timestamp, int eventType)
     {
         this->name = name;
@@ -62,7 +64,7 @@ public:
         city = value;
     }
 
-    std::QDate getTimestamp() const
+    QDate getTimestamp() const
     {
         return timestamp;
     }
@@ -83,18 +85,20 @@ public:
     }
 
     friend std::ostream &operator<<(std::ostream &output, Event &e){
-        output << e.getName() << std::endl;
+        output << e.getName().toStdString() << std::endl;
         output << "===========================" << std::endl;
-        output << e.getCity() << std::endl;
-        output << e.getTimestamp() << std::endl;
-        output << e.getEventType() << std::endl << std::endl;
+        output << e.getCity().toStdString() << std::endl;
+        output << e.getTimestamp().toString().toStdString() << std::endl;
+        output << e.getEventTypeTitle(e.getEventType()).toStdString() << std::endl << std::endl;
 
         return output;
     }
 
-    static QString getEventTypeTitle(int eventTypeCode) {
+    QString getEventTypeTitle(int eventTypeCode) {
         return EVENT_TYPE_TITLES[eventTypeCode];
     }
+
+    virtual QString getDebugData() = 0;
 };
 
 #endif // EVENT_H
