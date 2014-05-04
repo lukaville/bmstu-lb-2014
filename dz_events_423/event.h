@@ -4,6 +4,8 @@
 #include <string>
 #include <ctime>
 #include <iostream>
+#include <QDate>
+#include <QString>
 
 #define EVENT_TYPE_UNKNOWN 0
 #define EVENT_TYPE_CONFERENCE 1
@@ -17,22 +19,22 @@
 class Event
 {
 private:
-    static std::string EVENT_TYPE_TITLES[8] = {"Неизвестный тип",
+    static QString EVENT_TYPE_TITLES[8] = {"Неизвестный тип",
                                       "Конференция",
-                                      "Workshop",
+                                      "Семинар",
                                       "Лекция",
                                       "Мастер-класс",
                                       "Тренинг",
-                                      "Дискуссия",
+                                      "Круглый стол",
                                       "Вебинар"};
 
-    std::string name;
-    std::string city;
-    time_t timestamp;
+    QString name;
+    QString city;
+    QDate timestamp;
     int eventType;
 
 public:
-    Event(std::string name, std::string city, time_t timestamp, int eventType)
+    Event(QString name, QString city, QDate timestamp, int eventType)
     {
         this->name = name;
         this->city = city;
@@ -40,32 +42,32 @@ public:
         this->eventType = eventType;
     }
 
-    std::string getName() const
+    QString getName() const
     {
         return name;
     }
 
-    void setName(const std::string &value)
+    void setName(const QString &value)
     {
         name = value;
     }
 
-    std::string getCity() const
+    QString getCity() const
     {
         return city;
     }
 
-    void setCity(const std::string &value)
+    void setCity(const QString &value)
     {
         city = value;
     }
 
-    std::time_t getTimestamp() const
+    std::QDate getTimestamp() const
     {
         return timestamp;
     }
 
-    void setTimestamp(const time_t &value)
+    void setTimestamp(const QDate &value)
     {
         timestamp = value;
     }
@@ -90,7 +92,7 @@ public:
         return output;
     }
 
-    static std::string getEventTypeTitle(int eventTypeCode) {
+    static QString getEventTypeTitle(int eventTypeCode) {
         return EVENT_TYPE_TITLES[eventTypeCode];
     }
 };

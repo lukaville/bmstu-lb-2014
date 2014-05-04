@@ -54,3 +54,8 @@ void MainWindow::on_search_object_by_time_triggered()
 {
 
 }
+
+void MainWindow::on_action_help_triggered()
+{
+
+}
