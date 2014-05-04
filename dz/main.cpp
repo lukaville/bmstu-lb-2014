@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "event.h"
+#include "eventarray.h"
 
 using namespace std;
 

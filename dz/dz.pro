@@ -8,5 +8,6 @@ SOURCES += main.cpp
 SOURCES +=
 
 HEADERS += \
-    event.h
+    event.h \
+    eventarray.h
 

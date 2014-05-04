@@ -7,7 +7,7 @@
 class EventArray
 {
 private:
-    vector<Event> events;
+    std::vector<Event> events;
 public:
     EventArray();
     ~EventArray();
