@@ -4,6 +4,7 @@
 #include <event.h>
 #include <QMainWindow>
 #include "event_container.h"
+#include "eventcontainersmodel.h"
 
 namespace Ui {
 class MainWindow;
@@ -36,10 +37,12 @@ private slots:
 
     void on_action_help_triggered();
 
+    void on_clear_container_triggered();
+
 private:
     Ui::MainWindow *ui;
 
-    QList<EventList> containers;
+    EventContainersModel *containers_model = NULL;
 };
 
 #endif // MAINWINDOW_H

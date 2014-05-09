@@ -10,6 +10,7 @@ private:
     Event* data = NULL;
 public:
     Node();
+    ~Node();
     Node(Event* data);
     Node *getNext() const;
     void setNext(Node *value);

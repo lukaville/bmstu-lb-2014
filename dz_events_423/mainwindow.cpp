@@ -13,30 +13,35 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    EventList list;
-    list.add(new SimpleEvent("0", "test", QDate::currentDate(), 0));
-    list.add(new SimpleEvent("1", "test", QDate::currentDate(), 0));
-    list.add(new SimpleEvent("2", "test", QDate::currentDate(), 0));
-    list.add(new SimpleEvent("3", "test", QDate::currentDate(), 0));
+    containers_model = new EventContainersModel(0);
+    ui->ContainersListView->setModel(containers_model);
 
-    EventList list2;
+    EventList list1("list1");
+    list1.add(new SimpleEvent("0", "test", QDate::currentDate(), 0));
+    list1.add(new SimpleEvent("1", "test", QDate::currentDate(), 0));
+    list1.add(new SimpleEvent("2", "test", QDate::currentDate(), 0));
+    list1.add(new SimpleEvent("3", "test", QDate::currentDate(), 0));
+
+    EventList list2("list2");
     list2.add(new SimpleEvent("0b", "test", QDate::currentDate(), 0));
     list2.add(new SimpleEvent("1b", "test", QDate::currentDate(), 0));
     list2.add(new SimpleEvent("2b", "test", QDate::currentDate(), 0));
     list2.add(new SimpleEvent("3b", "test", QDate::currentDate(), 0));
 
-    list2.clear();
+    EventList list3("list3");
+    list3.add(new SimpleEvent("=0b", "test", QDate::currentDate(), 0));
+    list3.add(new SimpleEvent("=1b", "test", QDate::currentDate(), 0));
+    list3.add(new SimpleEvent("=2b", "test", QDate::currentDate(), 0));
+    list3.add(new SimpleEvent("=3b", "test", QDate::currentDate(), 0));
 
-    qDebug() << list2;
+    EventList list("list");
+    list = list1 + list2;
+    qDebug() << list;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void update_containers_view() {
-
 }
 
 void MainWindow::on_create_object_triggered()
@@ -56,22 +61,28 @@ void MainWindow::on_create_container_triggered()
                                                    tr("Новый набор событий"),
                                                    tr("Введите название набора событий:"),
                                                    QLineEdit::Normal,
-                                                   "Безымянное событие", &ok);
+                                                   "Безымянный набор событий", &ok);
 
     if (ok && !container_name.isEmpty()) {
-        containers.append(EventList(container_name));
-        update_containers_view();
+        containers_model->add(EventList(container_name));
     }
 }
 
 void MainWindow::on_delete_container_triggered()
 {
+    containers_model->remove(ui->ContainersListView->selectionModel()->selectedIndexes());
+    ui->ContainersListView->selectionModel()->clearSelection();
+}
 
+void MainWindow::on_clear_container_triggered()
+{
+    containers_model->clear(ui->ContainersListView->selectionModel()->selectedIndexes());
 }
 
 void MainWindow::on_merge_containers_triggered()
 {
-
+    containers_model->merge(ui->ContainersListView->selectionModel()->selectedIndexes());
+    ui->ContainersListView->selectionModel()->clearSelection();
 }
 
 void MainWindow::on_delete_object_triggered()

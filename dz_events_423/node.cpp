@@ -23,6 +23,11 @@ Node::Node()
 {
 }
 
+Node::~Node()
+{
+    //delete data;
+}
+
 Node::Node(Event *data)
 {
     this->data = data;

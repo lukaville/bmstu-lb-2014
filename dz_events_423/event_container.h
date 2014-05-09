@@ -3,15 +3,17 @@
 
 #include "event.h"
 #include "node.h"
+#include <QAbstractListModel>
 #include <QDebug>
 
-class EventList
+class EventList : public QAbstractListModel
 {
+    Q_OBJECT
 private:
     Node* root_node = NULL;
     QString name = "";
 public:
-    EventList() { }
+    explicit EventList(QObject *parent = 0) : QAbstractListModel(parent) {}
 
     EventList(QString name) {
         this->name = name;
@@ -27,6 +29,7 @@ public:
                 this->add(el.get(i));
             }
         }
+        this->name = el.name;
     }
 
     EventList& operator=(const EventList& right) {
@@ -50,12 +53,11 @@ public:
             while(current_node->getNext() != NULL) {
                 Node* temp = current_node->getNext();
 
-                delete current_node->getData();
                 delete current_node;
 
                 current_node = temp;
             }
-            delete current_node->getData();
+
             delete current_node;
         }
     }
@@ -145,7 +147,7 @@ public:
     EventList* search(QString query);
 
     friend EventList operator+(EventList& left, EventList& right) {
-        EventList result;
+        EventList result(left.getName());
         for(int i = 0; i < left.size(); ++i) {
             result.add(left.get(i));
         }
@@ -163,6 +165,17 @@ public:
     void setName(const QString &value)
     {
         name = value;
+    }
+
+    int rowCount(const QModelIndex &parent = QModelIndex()) const {
+        return size();
+    }
+
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const {
+        if (role == Qt::DisplayRole) {
+            return get(index.row())->getName();
+        }
+        return QVariant();
     }
 };
 

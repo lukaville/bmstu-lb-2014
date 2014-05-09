@@ -16,13 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     simpleevent.cpp \
     node.cpp \
-    eventsmodel.cpp
+    eventcontainersmodel.cpp
 
 HEADERS  += mainwindow.h \
     event.h \
     event_container.h \
     simpleevent.h \
     node.h \
-    eventsmodel.h
+    eventcontainersmodel.h
 
 FORMS    += mainwindow.ui
