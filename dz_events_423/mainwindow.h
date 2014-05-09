@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <event.h>
 #include <QMainWindow>
+#include "event_container.h"
 
 namespace Ui {
 class MainWindow;
@@ -36,6 +38,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    QList<EventList> containers;
 };
 
 #endif // MAINWINDOW_H

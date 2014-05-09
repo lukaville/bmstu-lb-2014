@@ -8,6 +8,7 @@ class SimpleEvent : public Event
 {
 public:
     SimpleEvent();
+    SimpleEvent(QString name, QString city, QDate timestamp, int eventType) : Event(name, city, timestamp, eventType) {}
 
     QString getDebugData() {
         return "";
