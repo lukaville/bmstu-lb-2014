@@ -23,7 +23,7 @@ public:
         clear();
     }
 
-    EventList(const EventList &el){
+    EventList(const EventList &el) : QAbstractListModel() {
         if (el.size() != NULL) {
             for(int i = 0; i < el.size(); ++i) {
                 this->add(el.get(i));
@@ -47,6 +47,7 @@ public:
     }
 
     void clear() {
+        beginRemoveRows(QModelIndex(), 0, 0);
         if (size() != 0) {
             Node* current_node = root_node;
             root_node = NULL;
@@ -60,10 +61,12 @@ public:
 
             delete current_node;
         }
+        endRemoveRows();
     }
 
     void add(Event *e)
     {
+        beginInsertRows(QModelIndex(), 0, 0);
         if (root_node == NULL) {
             root_node = new Node(e);
         } else {
@@ -73,6 +76,7 @@ public:
             }
             last_node->setNext(new Node(e));
         }
+        endInsertRows();
     }
 
     Event* get(int index) const {
@@ -92,11 +96,11 @@ public:
     }
 
     void remove(int index) {
+        beginRemoveRows(QModelIndex(), 0, 0);
         if (index < size()) {
             if (index == 0) {
                 Node* new_root = root_node->getNext();
 
-                delete root_node->getData();
                 delete root_node;
 
                 root_node = new_root;
@@ -113,12 +117,12 @@ public:
 
                 Node* new_next = current_prev_node->getNext()->getNext();
 
-                delete current_prev_node->getNext()->getData();
                 delete current_prev_node->getNext();
 
                 current_prev_node->setNext(new_next);
             }
         }
+        endRemoveRows();
     }
 
     int size() const {

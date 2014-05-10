@@ -3,6 +3,7 @@
 
 #include <event.h>
 #include <QMainWindow>
+#include <QItemSelection>
 #include "event_container.h"
 #include "eventcontainersmodel.h"
 
@@ -38,6 +39,8 @@ private slots:
     void on_action_help_triggered();
 
     void on_clear_container_triggered();
+
+    void container_selection_changed(QItemSelection);
 
 private:
     Ui::MainWindow *ui;

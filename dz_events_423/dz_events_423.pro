@@ -6,6 +6,8 @@
 
 QT       += core gui
 
+CONFIG += c++11
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = dz_events_423
@@ -16,13 +18,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     simpleevent.cpp \
     node.cpp \
-    eventcontainersmodel.cpp
+    eventcontainersmodel.cpp \
+    eventeditordialog.cpp
 
 HEADERS  += mainwindow.h \
     event.h \
     event_container.h \
     simpleevent.h \
     node.h \
-    eventcontainersmodel.h
+    eventcontainersmodel.h \
+    eventeditordialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    eventeditordialog.ui

@@ -6,7 +6,7 @@ EventContainersModel::EventContainersModel(QObject *parent) :
 {
 }
 
-void EventContainersModel::add(EventList el)
+void EventContainersModel::add(EventList* el)
 {
     beginInsertRows(QModelIndex(), 0, 0);
     containers.append(el);
@@ -19,6 +19,7 @@ void EventContainersModel::remove(QModelIndexList indexes)
 
     beginRemoveRows(QModelIndex(), 0, 0);
     for(int i = indexes.size() - 1; i >= 0; --i) {
+        delete containers.at(indexes.at(i).row());
         containers.removeAt(indexes.at(i).row());
     }
     endRemoveRows();
@@ -36,6 +37,9 @@ void EventContainersModel::merge(QModelIndexList indexes)
 void EventContainersModel::clear()
 {
     beginRemoveRows(QModelIndex(), 0, 0);
+    for(int i = 0; i < containers.size(); ++i) {
+        delete containers.at(i);
+    }
     containers.clear();
     endRemoveRows();
 }
@@ -43,8 +47,13 @@ void EventContainersModel::clear()
 void EventContainersModel::clear(QModelIndexList indexes)
 {
     for(int i = indexes.size() - 1; i >= 0; --i) {
-        //containers.at(indexes.at(i).row()).clear();
+        containers.at(indexes.at(i).row())->clear();
     }
+}
+
+EventList *EventContainersModel::get(int index)
+{
+    return containers.at(index);
 }
 
 int EventContainersModel::rowCount(const QModelIndex &parent) const
@@ -55,7 +64,7 @@ int EventContainersModel::rowCount(const QModelIndex &parent) const
 QVariant EventContainersModel::data(const QModelIndex &index, int role) const
 {
     if (role == Qt::DisplayRole) {
-        return containers.at(index.row()).getName();
+        return containers.at(index.row())->getName();
     }
     return QVariant();
 }

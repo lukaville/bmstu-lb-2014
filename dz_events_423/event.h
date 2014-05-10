@@ -7,26 +7,29 @@
 #include <QDate>
 #include <QString>
 
-#define EVENT_TYPE_UNKNOWN 0
-#define EVENT_TYPE_CONFERENCE 1
-#define EVENT_TYPE_WORKSHOP 2
-#define EVENT_TYPE_LECTION 3
-#define EVENT_TYPE_MASTERCLASS 4
-#define EVENT_TYPE_TRAINING 5
-#define EVENT_TYPE_DISCUSSION 6
-#define EVENT_TYPE_WEBINAR 7
+enum EventType { EVENT_TYPE_UNKNOWN,
+                 EVENT_TYPE_CONFERENCE,
+                 EVENT_TYPE_WORKSHOP,
+                 EVENT_TYPE_LECTION,
+                 EVENT_TYPE_MASTERCLASS,
+                 EVENT_TYPE_TRAINING,
+                 EVENT_TYPE_DISCUSSION,
+                 EVENT_TYPE_WEBINAR,
+                 EVENT_TYPES_COUNT};
 
 class Event
 {
+public:
+    constexpr static const char * const EVENT_TYPE_TITLES[EVENT_TYPES_COUNT] = {"Неизвестный тип",
+                                                                      "Конференция",
+                                                                      "Семинар",
+                                                                      "Лекция",
+                                                                      "Мастер-класс",
+                                                                      "Тренинг",
+                                                                      "Круглый стол",
+                                                                      "Вебинар"};
+
 private:
-    QString EVENT_TYPE_TITLES[8] = {"Неизвестный тип",
-                                      "Конференция",
-                                      "Семинар",
-                                      "Лекция",
-                                      "Мастер-класс",
-                                      "Тренинг",
-                                      "Круглый стол",
-                                      "Вебинар"};
 
     QString name;
     QString city;
@@ -95,7 +98,7 @@ public:
     }
 
     QString getEventTypeTitle(int eventTypeCode) {
-        return EVENT_TYPE_TITLES[eventTypeCode];
+        return QString(EVENT_TYPE_TITLES[eventTypeCode]);
     }
 
     virtual QString getDebugData() = 0;
