@@ -48,7 +48,98 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="cityComboBox"/>
+      <widget class="QComboBox" name="cityComboBox">
+       <item>
+        <property name="text">
+         <string>Москва</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Нью-йорк</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Алматы</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Владимир</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Воронеж</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Днепропетровск</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Дубна</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Екатеринбург</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Запорожье</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Зеленогорск</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Казань</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Киев</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Минск</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Одесса</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Рига</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Санкт-Петербург</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Тюмень</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Харьков</string>
+        </property>
+       </item>
+      </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_4">
@@ -81,7 +172,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>

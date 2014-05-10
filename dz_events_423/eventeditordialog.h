@@ -2,6 +2,7 @@
 #define EVENTEDITORDIALOG_H
 
 #include <QDialog>
+#include "event.h"
 
 namespace Ui {
 class EventEditorDialog;
@@ -13,6 +14,7 @@ class EventEditorDialog : public QDialog
 
 public:
     explicit EventEditorDialog(QWidget *parent = 0);
+    void openEditor(Event* e);
     ~EventEditorDialog();
 
 private:

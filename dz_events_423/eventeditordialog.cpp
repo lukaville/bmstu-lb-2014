@@ -9,9 +9,23 @@ EventEditorDialog::EventEditorDialog(QWidget *parent) :
     ui->setupUi(this);
 
     for(int i = 0; i < EVENT_TYPES_COUNT; ++i) {
-        qDebug() << Event::EVENT_TYPE_TITLES;
-        //ui->typeComboBox->addItem([i]);
+        ui->typeComboBox->addItem(EVENT_TYPE_TITLES[i]);
     }
+}
+
+void EventEditorDialog::openEditor(Event* e) {
+    ui->nameLineEdit->setText(e->getName());
+
+    for(int i = 0; i < ui->cityComboBox->count(); ++i) {
+        if (ui->cityComboBox->itemText(i) == e->getCity()) {
+            ui->cityComboBox->setCurrentIndex(i);
+            break;
+        };
+    }
+
+    ui->dateTimeEdit->setDate(e->getTimestamp());
+
+    this->exec();
 }
 
 EventEditorDialog::~EventEditorDialog()

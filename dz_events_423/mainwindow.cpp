@@ -97,10 +97,12 @@ void MainWindow::on_merge_containers_triggered()
 void MainWindow::on_create_object_triggered()
 {
     if (ui->ObjectsListView->model() != NULL) {
+        Event* new_event = new SimpleEvent("Безымянное событие", "Москва", QDate::currentDate(), 0);
+
         EventEditorDialog dialog;
-        dialog.exec();
-        ((EventList*) ui->ObjectsListView->model())->add(
-                    new SimpleEvent("The event", "test", QDate::currentDate(), 0));
+        dialog.openEditor(new_event);
+
+        ((EventList*) ui->ObjectsListView->model())->add(new_event);
     } else {
         QMessageBox messageBox;
         messageBox.critical(0,"Ошибка","Вы не выбрали набор событий");

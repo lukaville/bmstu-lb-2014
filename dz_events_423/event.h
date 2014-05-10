@@ -15,20 +15,19 @@ enum EventType { EVENT_TYPE_UNKNOWN,
                  EVENT_TYPE_TRAINING,
                  EVENT_TYPE_DISCUSSION,
                  EVENT_TYPE_WEBINAR,
-                 EVENT_TYPES_COUNT};
+                 EVENT_TYPES_COUNT };
+
+constexpr static const char* EVENT_TYPE_TITLES[EVENT_TYPES_COUNT] = {"Неизвестный тип",
+                                      "Конференция",
+                                      "Семинар",
+                                      "Лекция",
+                                      "Мастер-класс",
+                                      "Тренинг",
+                                      "Круглый стол",
+                                      "Вебинар"};
 
 class Event
 {
-public:
-    constexpr static const char * const EVENT_TYPE_TITLES[EVENT_TYPES_COUNT] = {"Неизвестный тип",
-                                                                      "Конференция",
-                                                                      "Семинар",
-                                                                      "Лекция",
-                                                                      "Мастер-класс",
-                                                                      "Тренинг",
-                                                                      "Круглый стол",
-                                                                      "Вебинар"};
-
 private:
 
     QString name;

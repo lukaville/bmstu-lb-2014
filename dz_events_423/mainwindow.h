@@ -1,7 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <event.h>
 #include <QMainWindow>
 #include <QItemSelection>
 #include "event_container.h"
