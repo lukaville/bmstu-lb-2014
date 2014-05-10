@@ -4,7 +4,7 @@
 #include <string>
 #include <ctime>
 #include <iostream>
-#include <QDate>
+#include <QDateTime>
 #include <QString>
 
 enum EventType { EVENT_TYPE_UNKNOWN,
@@ -32,13 +32,14 @@ private:
 
     QString name;
     QString city;
-    QDate timestamp;
+    QDateTime timestamp;
     int eventType;
 
 public:
     Event() {}
+    virtual ~Event() {}
 
-    Event(QString name, QString city, QDate timestamp, int eventType)
+    Event(QString name, QString city, QDateTime timestamp, int eventType)
     {
         this->name = name;
         this->city = city;
@@ -66,12 +67,12 @@ public:
         city = value;
     }
 
-    QDate getTimestamp() const
+    QDateTime getTimestamp() const
     {
         return timestamp;
     }
 
-    void setTimestamp(const QDate &value)
+    void setTimestamp(const QDateTime &value)
     {
         timestamp = value;
     }

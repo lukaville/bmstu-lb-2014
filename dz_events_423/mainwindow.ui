@@ -66,6 +66,7 @@
      <string>Событие</string>
     </property>
     <addaction name="create_object"/>
+    <addaction name="edit_object"/>
     <addaction name="delete_object"/>
    </widget>
    <widget class="QMenu" name="menu_4">
@@ -135,6 +136,11 @@
   <action name="clear_container">
    <property name="text">
     <string>Очистить</string>
+   </property>
+  </action>
+  <action name="edit_object">
+   <property name="text">
+    <string>Редактировать</string>
    </property>
   </action>
  </widget>

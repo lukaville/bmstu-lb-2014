@@ -30,7 +30,19 @@ void EventContainersModel::merge(QModelIndexList indexes)
     qSort(indexes.begin(), indexes.end());
 
     if(indexes.size() > 1) {
-        //containers.at(i)
+        for(int i = 1; i < indexes.size(); ++i) {
+            for(int j = 0; j < containers.at(indexes.at(i).row())->size(); ++j) {
+                containers.at(indexes.at(0).row())->add(containers.at(indexes.at(i).row())->get(j));
+            }
+            containers.at(indexes.at(i).row())->clear();
+        }
+
+        beginRemoveRows(QModelIndex(), 0, 0);
+        for(int i = indexes.size() - 1; i > 0; --i) {
+            delete containers.at(indexes.at(i).row());
+            containers.removeAt(indexes.at(i).row());
+        }
+        endRemoveRows();
     }
 }
 

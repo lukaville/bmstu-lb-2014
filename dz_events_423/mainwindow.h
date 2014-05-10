@@ -41,6 +41,10 @@ private slots:
 
     void container_selection_changed(QItemSelection);
 
+    void on_edit_object_triggered();
+
+    void on_ObjectsListView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
 

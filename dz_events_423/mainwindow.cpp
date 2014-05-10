@@ -23,22 +23,22 @@ MainWindow::MainWindow(QWidget *parent) :
           this, SLOT(container_selection_changed(QItemSelection)));
 
     EventList list1("list1");
-    list1.add(new SimpleEvent("0", "test", QDate::currentDate(), 0));
-    list1.add(new SimpleEvent("1", "test", QDate::currentDate(), 0));
-    list1.add(new SimpleEvent("2", "test", QDate::currentDate(), 0));
-    list1.add(new SimpleEvent("3", "test", QDate::currentDate(), 0));
+    list1.add(new SimpleEvent("0", "test", QDateTime::currentDateTime(), 0));
+    list1.add(new SimpleEvent("1", "test", QDateTime::currentDateTime(), 0));
+    list1.add(new SimpleEvent("2", "test", QDateTime::currentDateTime(), 0));
+    list1.add(new SimpleEvent("3", "test", QDateTime::currentDateTime(), 0));
 
     EventList list2("list2");
-    list2.add(new SimpleEvent("0b", "test", QDate::currentDate(), 0));
-    list2.add(new SimpleEvent("1b", "test", QDate::currentDate(), 0));
-    list2.add(new SimpleEvent("2b", "test", QDate::currentDate(), 0));
-    list2.add(new SimpleEvent("3b", "test", QDate::currentDate(), 0));
+    list2.add(new SimpleEvent("0b", "test", QDateTime::currentDateTime(), 0));
+    list2.add(new SimpleEvent("1b", "test", QDateTime::currentDateTime(), 0));
+    list2.add(new SimpleEvent("2b", "test", QDateTime::currentDateTime(), 0));
+    list2.add(new SimpleEvent("3b", "test", QDateTime::currentDateTime(), 0));
 
     EventList list3("list3");
-    list3.add(new SimpleEvent("=0b", "test", QDate::currentDate(), 0));
-    list3.add(new SimpleEvent("=1b", "test", QDate::currentDate(), 0));
-    list3.add(new SimpleEvent("=2b", "test", QDate::currentDate(), 0));
-    list3.add(new SimpleEvent("=3b", "test", QDate::currentDate(), 0));
+    list3.add(new SimpleEvent("=0b", "test", QDateTime::currentDateTime(), 0));
+    list3.add(new SimpleEvent("=1b", "test", QDateTime::currentDateTime(), 0));
+    list3.add(new SimpleEvent("=2b", "test", QDateTime::currentDateTime(), 0));
+    list3.add(new SimpleEvent("=3b", "test", QDateTime::currentDateTime(), 0));
 
     EventList list("list");
     list = list1 + list2;
@@ -97,21 +97,47 @@ void MainWindow::on_merge_containers_triggered()
 void MainWindow::on_create_object_triggered()
 {
     if (ui->ObjectsListView->model() != NULL) {
-        Event* new_event = new SimpleEvent("Безымянное событие", "Москва", QDate::currentDate(), 0);
+        Event* new_event = new SimpleEvent("Безымянное событие", "Москва", QDateTime::currentDateTime(), 0);
 
         EventEditorDialog dialog;
-        dialog.openEditor(new_event);
 
-        ((EventList*) ui->ObjectsListView->model())->add(new_event);
+        if (dialog.openEditor(new_event)) {
+            ((EventList*) ui->ObjectsListView->model())->add(new_event);
+        }
     } else {
         QMessageBox messageBox;
         messageBox.critical(0,"Ошибка","Вы не выбрали набор событий");
     }
 }
 
+void MainWindow::on_edit_object_triggered()
+{
+    QModelIndexList sel = ui->ObjectsListView->selectionModel()->selectedIndexes();
+    if(sel.size() == 1) {
+        Event* e = ((EventList*) ui->ObjectsListView->model())->get(sel.at(0).row());
+
+        EventEditorDialog dialog;
+        dialog.openEditor(e);
+    } else {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Ошибка","Выберите одно событие");
+    }
+}
+
+void MainWindow::on_ObjectsListView_doubleClicked(const QModelIndex &index)
+{
+    on_edit_object_triggered();
+}
+
 void MainWindow::on_delete_object_triggered()
 {
-
+    QModelIndexList sel = ui->ObjectsListView->selectionModel()->selectedIndexes();
+    if(sel.size() == 1) {
+        ((EventList*) ui->ObjectsListView->model())->remove(sel.at(0).row());
+    } else {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Ошибка","Выберите одно событие");
+    }
 }
 
 void MainWindow::on_search_object_by_name_triggered()
@@ -128,3 +154,5 @@ void MainWindow::on_action_help_triggered()
 {
 
 }
+
+

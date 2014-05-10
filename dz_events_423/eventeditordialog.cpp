@@ -13,7 +13,24 @@ EventEditorDialog::EventEditorDialog(QWidget *parent) :
     }
 }
 
-void EventEditorDialog::openEditor(Event* e) {
+bool EventEditorDialog::openEditor(Event* e) {
+    event = e;
+    loadEvent(e);
+    return this->exec();
+}
+
+EventEditorDialog::~EventEditorDialog()
+{
+    delete ui;
+}
+
+void EventEditorDialog::on_nameLineEdit_textChanged(const QString &name)
+{
+    event->setName(name);
+}
+
+void EventEditorDialog::loadEvent(Event *e)
+{
     ui->nameLineEdit->setText(e->getName());
 
     for(int i = 0; i < ui->cityComboBox->count(); ++i) {
@@ -23,12 +40,20 @@ void EventEditorDialog::openEditor(Event* e) {
         };
     }
 
-    ui->dateTimeEdit->setDate(e->getTimestamp());
-
-    this->exec();
+    ui->dateTimeEdit->setDateTime(e->getTimestamp());
 }
 
-EventEditorDialog::~EventEditorDialog()
+void EventEditorDialog::on_typeComboBox_currentIndexChanged(int index)
 {
-    delete ui;
+    event->setEventType(index);
+}
+
+void EventEditorDialog::on_cityComboBox_currentIndexChanged(const QString &city)
+{
+    event->setCity(city);
+}
+
+void EventEditorDialog::on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTime)
+{
+    event->setTimestamp(dateTime);
 }
