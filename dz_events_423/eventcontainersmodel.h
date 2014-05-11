@@ -3,7 +3,7 @@
 
 #include <QAbstractListModel>
 #include <QVector>
-#include "event_container.h"
+#include "eventcontainer.h"
 
 class EventContainersModel : public QAbstractListModel
 {

@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QItemSelection>
-#include "event_container.h"
+#include "eventcontainer.h"
 #include "eventcontainersmodel.h"
 
 namespace Ui {

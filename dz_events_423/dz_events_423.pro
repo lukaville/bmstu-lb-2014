@@ -19,20 +19,23 @@ SOURCES += main.cpp\
     node.cpp \
     eventcontainersmodel.cpp \
     eventeditordialog.cpp \
-    searchresultdialog.cpp
+    searchresultdialog.cpp \
+    searchbytimedialog.cpp
 
 HEADERS  += mainwindow.h \
     event.h \
-    event_container.h \
     simpleevent.h \
     node.h \
     eventcontainersmodel.h \
     eventeditordialog.h \
-    searchresultdialog.h
+    searchresultdialog.h \
+    eventcontainer.h \
+    searchbytimedialog.h
 
 FORMS    += mainwindow.ui \
     eventeditordialog.ui \
-    searchresultdialog.ui
+    searchresultdialog.ui \
+    searchbytimedialog.ui
 
 RESOURCES += \
     icons.qrc

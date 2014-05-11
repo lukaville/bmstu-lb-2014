@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SearchResultDialog</class>
- <widget class="QDialog" name="SearchResultDialog">
+ <class>SearchByTimeDialog</class>
+ <widget class="QDialog" name="SearchByTimeDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>625</width>
-    <height>420</height>
+    <width>400</width>
+    <height>149</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Результаты поиска</string>
-  </property>
-  <property name="windowIcon">
-   <iconset resource="icons.qrc">
-    <normaloff>:/new/icons/event_icon</normaloff>:/new/icons/event_icon</iconset>
+   <string>Поиск по времени</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QListView" name="listView"/>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Начальное время:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDateTimeEdit" name="startDateTimeEdit"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Конечное время:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDateTimeEdit" name="endDateTimeEdit"/>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -27,20 +53,18 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>SearchResultDialog</receiver>
+   <receiver>SearchByTimeDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -56,7 +80,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>SearchResultDialog</receiver>
+   <receiver>SearchByTimeDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

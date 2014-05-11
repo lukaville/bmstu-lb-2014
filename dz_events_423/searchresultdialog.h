@@ -2,7 +2,7 @@
 #define SEARCHRESULTDIALOG_H
 
 #include <QDialog>
-#include "event_container.h"
+#include "eventcontainer.h"
 
 namespace Ui {
 class SearchResultDialog;

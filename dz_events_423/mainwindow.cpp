@@ -2,12 +2,13 @@
 #include "ui_mainwindow.h"
 #include "event.h"
 #include "simpleevent.h"
-#include "event_container.h"
+#include "eventcontainer.h"
 #include "eventeditordialog.h"
 #include <QDebug>
 #include <QDir>
 #include <QInputDialog>
 #include <QMessageBox>
+#include "searchbytimedialog.h"
 #include "searchresultdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -177,12 +178,25 @@ void MainWindow::on_search_object_by_name_triggered()
 
 void MainWindow::on_search_object_by_time_triggered()
 {
-
+    if (ui->ObjectsListView->model() != NULL) {
+        SearchByTimeDialog dialog;
+        if (dialog.exec()) {
+            EventList* results = dialog.getResults((EventList*) ui->ObjectsListView->model());
+            qDebug() << results->size();
+            SearchResultDialog searchDialog;
+            searchDialog.openDialog(results);
+            delete results;
+        }
+    } else {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Ошибка","Вы не выбрали набор событий");
+    }
 }
 
 void MainWindow::on_action_help_triggered()
 {
-
+    QMessageBox messageBox;
+    messageBox.about(0,"Справка","См. документацию в приложенном файле.");
 }
 
 

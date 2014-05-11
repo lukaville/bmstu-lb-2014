@@ -162,6 +162,19 @@ public:
         return result;
     }
 
+    EventList* search(QDateTime start, QDateTime end) {
+        EventList* result = new EventList("Результаты поиска");
+
+        for(int i = 0; i < size(); ++i) {
+            Event* e = get(i);
+            if (start <= e->getTimestamp() && e->getTimestamp() <= end) {
+                result->add(e);
+            }
+        }
+
+        return result;
+    }
+
     friend EventList operator+(EventList& left, EventList& right) {
         EventList result(left.getName());
         for(int i = 0; i < left.size(); ++i) {
