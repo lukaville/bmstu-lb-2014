@@ -78,5 +78,9 @@ QVariant EventContainersModel::data(const QModelIndex &index, int role) const
     if (role == Qt::DisplayRole) {
         return containers.at(index.row())->getName();
     }
+    if (role == Qt::DecorationRole) {
+        static QIcon event_icon(":new/icons/folder_icon");
+        return event_icon;
+    }
     return QVariant();
 }

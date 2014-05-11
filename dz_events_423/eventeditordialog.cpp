@@ -40,12 +40,16 @@ void EventEditorDialog::loadEvent(Event *e)
         };
     }
 
+    ui->typeComboBox->setCurrentIndex(e->getEventType());
+
     ui->dateTimeEdit->setDateTime(e->getTimestamp());
 }
 
 void EventEditorDialog::on_typeComboBox_currentIndexChanged(int index)
 {
-    event->setEventType(index);
+    if (event != NULL && index >= 0 && index < EVENT_TYPES_COUNT) {
+        event->setEventType(index);
+    }
 }
 
 void EventEditorDialog::on_cityComboBox_currentIndexChanged(const QString &city)

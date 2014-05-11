@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::EventEditorDialog *ui;
-    Event* event;
+    Event* event = NULL;
     void loadEvent(Event* e);
 };
 

@@ -5,6 +5,7 @@
 #include "node.h"
 #include <QAbstractListModel>
 #include <QDebug>
+#include <qicon.h>
 
 class EventList : public QAbstractListModel
 {
@@ -148,7 +149,18 @@ public:
         return d;
     }
 
-    EventList* search(QString query);
+    EventList* search(QString query) {
+        EventList* result = new EventList("Результаты поиска");
+
+        for(int i = 0; i < size(); ++i) {
+            Event* e = get(i);
+            if (e->getName().contains(query)) {
+                result->add(e);
+            }
+        }
+
+        return result;
+    }
 
     friend EventList operator+(EventList& left, EventList& right) {
         EventList result(left.getName());
@@ -177,10 +189,15 @@ public:
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const {
         if (role == Qt::DisplayRole) {
-            return get(index.row())->getName();
+            Event* e = get(index.row());
+            return e->getName() + " (" + e->getCity() + ")" + " - " + e->getTimestamp().toString("hh:mm, dd MMM yyyy");
+        }
+        if (role == Qt::DecorationRole) {
+            static QIcon event_icon(":new/icons/page_icon");
+            return event_icon;
         }
         return QVariant();
     }
 };
 
-#endif // EVENT_CONTAINER_H
+#endif // EVENT_CONTAINER_Hs

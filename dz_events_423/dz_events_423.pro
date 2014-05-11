@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     simpleevent.cpp \
     node.cpp \
     eventcontainersmodel.cpp \
-    eventeditordialog.cpp
+    eventeditordialog.cpp \
+    searchresultdialog.cpp
 
 HEADERS  += mainwindow.h \
     event.h \
@@ -26,7 +27,12 @@ HEADERS  += mainwindow.h \
     simpleevent.h \
     node.h \
     eventcontainersmodel.h \
-    eventeditordialog.h
+    eventeditordialog.h \
+    searchresultdialog.h
 
 FORMS    += mainwindow.ui \
-    eventeditordialog.ui
+    eventeditordialog.ui \
+    searchresultdialog.ui
+
+RESOURCES += \
+    icons.qrc

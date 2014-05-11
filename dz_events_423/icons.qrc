@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/icons">
+        <file alias="folder_icon">folder.png</file>
+        <file alias="page_icon">page.png</file>
+        <file alias="event_icon">event.png</file>
+    </qresource>
+</RCC>

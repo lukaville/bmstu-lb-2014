@@ -8,6 +8,7 @@
 #include <QDir>
 #include <QInputDialog>
 #include <QMessageBox>
+#include "searchresultdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -112,15 +113,20 @@ void MainWindow::on_create_object_triggered()
 
 void MainWindow::on_edit_object_triggered()
 {
-    QModelIndexList sel = ui->ObjectsListView->selectionModel()->selectedIndexes();
-    if(sel.size() == 1) {
-        Event* e = ((EventList*) ui->ObjectsListView->model())->get(sel.at(0).row());
+    if (ui->ObjectsListView->model() != NULL) {
+        QModelIndexList sel = ui->ObjectsListView->selectionModel()->selectedIndexes();
+        if(sel.size() == 1) {
+            Event* e = ((EventList*) ui->ObjectsListView->model())->get(sel.at(0).row());
 
-        EventEditorDialog dialog;
-        dialog.openEditor(e);
+            EventEditorDialog dialog;
+            dialog.openEditor(e);
+        } else {
+            QMessageBox messageBox;
+            messageBox.critical(0,"Ошибка","Выберите одно событие");
+        }
     } else {
         QMessageBox messageBox;
-        messageBox.critical(0,"Ошибка","Выберите одно событие");
+        messageBox.critical(0,"Ошибка","Вы не выбрали набор событий");
     }
 }
 
@@ -130,19 +136,43 @@ void MainWindow::on_ObjectsListView_doubleClicked(const QModelIndex &index)
 }
 
 void MainWindow::on_delete_object_triggered()
-{
-    QModelIndexList sel = ui->ObjectsListView->selectionModel()->selectedIndexes();
-    if(sel.size() == 1) {
-        ((EventList*) ui->ObjectsListView->model())->remove(sel.at(0).row());
+{    
+    if (ui->ObjectsListView->model() != NULL) {
+        QModelIndexList sel = ui->ObjectsListView->selectionModel()->selectedIndexes();
+        if(sel.size() == 1) {
+            ((EventList*) ui->ObjectsListView->model())->remove(sel.at(0).row());
+        } else {
+            QMessageBox messageBox;
+            messageBox.critical(0,"Ошибка","Выберите одно событие");
+        }
     } else {
         QMessageBox messageBox;
-        messageBox.critical(0,"Ошибка","Выберите одно событие");
+        messageBox.critical(0,"Ошибка","Вы не выбрали набор событий");
     }
 }
 
 void MainWindow::on_search_object_by_name_triggered()
 {
+    if (ui->ObjectsListView->model() != NULL) {
+        bool ok;
+        QString search_query = QInputDialog::getText(this,
+                                                       tr("Поиск по событиям"),
+                                                       tr("Введите запрос для поиска"),
+                                                       QLineEdit::Normal,
+                                                       "", &ok);
 
+        if (ok && !search_query.isEmpty()) {
+            EventList* results = ((EventList*) ui->ObjectsListView->model())->search(search_query);
+
+            SearchResultDialog searchDialog;
+            searchDialog.openDialog(results);
+
+            delete results;
+        }
+    } else {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Ошибка","Вы не выбрали набор событий");
+    }
 }
 
 void MainWindow::on_search_object_by_time_triggered()
