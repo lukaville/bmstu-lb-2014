@@ -34,6 +34,7 @@ private:
     QString city;
     QDateTime timestamp;
     int eventType;
+    bool isActive = true;
 
 public:
     Event() {}
@@ -102,6 +103,17 @@ public:
     }
 
     virtual QString getDebugData() = 0;
+
+    bool getActive() const
+    {
+        return isActive;
+    }
+
+    void setActive(bool value)
+    {
+        isActive = value;
+    }
+
 };
 
 #endif // EVENT_H

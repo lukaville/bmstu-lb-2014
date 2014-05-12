@@ -5,7 +5,7 @@
 #include "node.h"
 #include <QAbstractListModel>
 #include <QDebug>
-#include <qicon.h>
+#include <QIcon>
 
 class EventList : public QAbstractListModel
 {
@@ -13,6 +13,10 @@ class EventList : public QAbstractListModel
 private:
     Node* root_node = NULL;
     QString name = "";
+    bool isActive = true;
+    bool isDebug = false;
+    QString debugInformation = "";
+
 public:
     explicit EventList(QObject *parent = 0) : QAbstractListModel(parent) {}
 
@@ -210,6 +214,16 @@ public:
             return event_icon;
         }
         return QVariant();
+    }
+
+    bool getIsActive() const
+    {
+        return isActive;
+    }
+
+    void setActive(bool value)
+    {
+        isActive = value;
     }
 };
 
