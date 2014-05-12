@@ -6,6 +6,7 @@
 #include <iostream>
 #include <QDateTime>
 #include <QString>
+#include <QDebug>
 
 enum EventType { EVENT_TYPE_UNKNOWN,
                  EVENT_TYPE_CONFERENCE,
@@ -94,6 +95,16 @@ public:
         output << e.getCity().toStdString() << std::endl;
         output << e.getTimestamp().toString().toStdString() << std::endl;
         output << e.getEventTypeTitle(e.getEventType()).toStdString() << std::endl << std::endl;
+
+        return output;
+    }
+
+    friend QDebug operator<< (QDebug output, Event &e) {
+        output << e.getName() << "\n";
+        output << "===========================" << "\n";
+        output << e.getCity() << "\n";
+        output << e.getTimestamp().toString() << "\n";
+        output << e.getEventTypeTitle(e.getEventType()) << "\n\n";
 
         return output;
     }
