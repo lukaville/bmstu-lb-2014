@@ -11,7 +11,7 @@ class EventList : public QAbstractListModel
 {
     Q_OBJECT
 private:
-    Node* root_node = NULL;
+    Node* root_node = nullptr;
     QString name = "";
     bool isActive = true;
     bool isDebug = false;
@@ -29,7 +29,7 @@ public:
     }
 
     EventList(const EventList &el) : QAbstractListModel() {
-        if (el.size() != NULL) {
+        if (el.size() != 0) {
             for(int i = 0; i < el.size(); ++i) {
                 this->add(el.get(i));
             }
@@ -55,8 +55,8 @@ public:
         beginRemoveRows(QModelIndex(), 0, 0);
         if (size() != 0) {
             Node* current_node = root_node;
-            root_node = NULL;
-            while(current_node->getNext() != NULL) {
+            root_node = nullptr;
+            while(current_node->getNext() != nullptr) {
                 Node* temp = current_node->getNext();
 
                 delete current_node;
@@ -72,11 +72,11 @@ public:
     void add(Event *e)
     {
         beginInsertRows(QModelIndex(), 0, 0);
-        if (root_node == NULL) {
+        if (root_node == 0) {
             root_node = new Node(e);
         } else {
             Node* last_node = root_node;
-            while(last_node->getNext() != NULL) {
+            while(last_node->getNext() != nullptr) {
                 last_node = last_node->getNext();
             }
             last_node->setNext(new Node(e));
@@ -85,18 +85,18 @@ public:
     }
 
     Event* get(int index) const {
-        if (root_node != NULL) {
+        if (root_node != nullptr) {
             Node* current_node = root_node;
             for(int i = 0; i < index; ++i) {
-                if(current_node->getNext() != NULL) {
+                if(current_node->getNext() != nullptr) {
                     current_node = current_node->getNext();
                 } else {
-                    return NULL;
+                    return nullptr;
                 }
             }
             return current_node->getData();
         } else {
-            return NULL;
+            return nullptr;
         }
     }
 
@@ -113,7 +113,7 @@ public:
             } else {
                 Node* current_prev_node = root_node;
                 for(int i = 0; i < index - 1; ++i) {
-                    if(current_prev_node->getNext() != NULL) {
+                    if(current_prev_node->getNext() != nullptr) {
                         current_prev_node = current_prev_node->getNext();
                     } else {
                         return;
@@ -131,12 +131,12 @@ public:
     }
 
     int size() const {
-        if (root_node == NULL) {
+        if (root_node == nullptr) {
             return 0;
         } else {
             int i = 1;
             Node* current_node = root_node;
-            while(current_node->getNext() != NULL) {
+            while(current_node->getNext() != nullptr) {
                 current_node = current_node->getNext();
                 ++i;
             }

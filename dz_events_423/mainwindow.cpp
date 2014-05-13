@@ -23,28 +23,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->ContainersListView->selectionModel(),
           SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
           this, SLOT(container_selection_changed(QItemSelection)));
-
-    EventList list1("list1");
-    list1.add(new SimpleEvent("0", "test", QDateTime::currentDateTime(), 0));
-    list1.add(new SimpleEvent("1", "test", QDateTime::currentDateTime(), 0));
-    list1.add(new SimpleEvent("2", "test", QDateTime::currentDateTime(), 0));
-    list1.add(new SimpleEvent("3", "test", QDateTime::currentDateTime(), 0));
-
-    EventList list2("list2");
-    list2.add(new SimpleEvent("0b", "test", QDateTime::currentDateTime(), 0));
-    list2.add(new SimpleEvent("1b", "test", QDateTime::currentDateTime(), 0));
-    list2.add(new SimpleEvent("2b", "test", QDateTime::currentDateTime(), 0));
-    list2.add(new SimpleEvent("3b", "test", QDateTime::currentDateTime(), 0));
-
-    EventList list3("list3");
-    list3.add(new SimpleEvent("=0b", "test", QDateTime::currentDateTime(), 0));
-    list3.add(new SimpleEvent("=1b", "test", QDateTime::currentDateTime(), 0));
-    list3.add(new SimpleEvent("=2b", "test", QDateTime::currentDateTime(), 0));
-    list3.add(new SimpleEvent("=3b", "test", QDateTime::currentDateTime(), 0));
-
-    EventList list("list");
-    list = list1 + list2;
-    qDebug() << list;
 }
 
 MainWindow::~MainWindow()
