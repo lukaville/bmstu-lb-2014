@@ -129,7 +129,6 @@ void MainWindow::on_delete_object_triggered()
         messageBox.critical(0,"Ошибка","Вы не выбрали набор событий");
     }
 }
-
 void MainWindow::on_search_object_by_name_triggered()
 {
     if (ui->ObjectsListView->model() != NULL) {
