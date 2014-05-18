@@ -49,6 +49,24 @@ public:
         this->eventType = eventType;
     }
 
+    Event(const Event &e){
+        this->name = e.getName();
+        this->city = e.getCity();
+        this->timestamp = e.getTimestamp();
+        this->eventType = e.getEventType();
+    }
+
+    Event& operator=(const Event& e) {
+        if (this == &e) {
+            return *this;
+        }
+        this->name = e.getName();
+        this->city = e.getCity();
+        this->timestamp = e.getTimestamp();
+        this->eventType = e.getEventType();
+        return *this;
+    }
+
     QString getName() const
     {
         return name;

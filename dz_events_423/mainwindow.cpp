@@ -23,6 +23,13 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->ContainersListView->selectionModel(),
           SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
           this, SLOT(container_selection_changed(QItemSelection)));
+
+    // Test
+    SimpleEvent a("0", "test", QDateTime::currentDateTime(), 0);
+    SimpleEvent e(a);
+
+    qDebug() << e;
+
 }
 
 MainWindow::~MainWindow()
